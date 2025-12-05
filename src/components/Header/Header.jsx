@@ -3,6 +3,7 @@ import { Top } from "./Style";
 
 const Header = () => (
   <Top>
+    <img src="/imagens/logo.svg" alt="CH Construtora logo" />
     <Link to="/">Home</Link>
     <Link to="/fotos">Fotos</Link>
     <Link to="/atletas">Atletas</Link>

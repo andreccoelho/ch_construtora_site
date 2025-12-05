@@ -6,6 +6,11 @@ const Top = styled.header`
   display: flex;
   flex-direction: row;
   margin: 0;
+  justify-content: space-between;
+  img {
+    height: 2.5em;
+    padding: .3em;
+  }
   a {
     text-align: center;
     padding: .3em;
