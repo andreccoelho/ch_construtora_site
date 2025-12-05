@@ -10,25 +10,30 @@ const Top = styled.header`
   flex-direction: row;
   margin: 0;
   justify-content: space-between;
+  align-items: center;
+
   img {
     height: 2.5em;
     padding: .3em;
   }
+
+  nav {
+    display: flex;
+    gap: 2.88rem;
+  }
+
   a {
-    text-align: center;
-    padding: .3em;
-    margin: 0 .7em;
-    min-width: 5em;
-    background-color: transparent;
+    color: #FFF;
+    font-family: Alata;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
     text-decoration: none;
-    font-weight: bold;
-    color: #fff;
-    text-transform: uppercase;
-    border: 2px solid #fff;
-    &:hover{
-      background-color: var(--destaque);
-      color: var(--secundaria);
-      border-color: var(--destaque);
+
+    &:hover {
+      color: #BDAD77;
+      text-decoration-line: underline;
     }
   }
 `

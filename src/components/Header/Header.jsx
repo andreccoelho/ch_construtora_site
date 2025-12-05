@@ -4,15 +4,12 @@ import { Top } from "./Style";
 const Header = () => (
   <Top>
     <img src="/imagens/logo.svg" alt="CH Construtora logo" />
-    <Link to="/">Home</Link>
-    <Link to="/fotos">Fotos</Link>
-    <Link to="/atletas">Atletas</Link>
-    
-    { window.sessionStorage.getItem('accessToken')
-    ? <Link to="/logout">Logout</Link>
-    : <Link to="/login">Login</Link>
-    }
-    
+    <nav>
+      <Link to="/">Início</Link>
+      <Link to="/sobre">Sobre</Link>
+      <Link to="/obras">Obras</Link>
+      <Link to="/contato">Contato</Link>
+    </nav>
   </Top>
 )
 
