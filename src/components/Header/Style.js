@@ -2,7 +2,10 @@ import styled from "styled-components"
 
 const Top = styled.header`
   padding: .5em 2em;
-  background-color: var(--secundaria);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   flex-direction: row;
   margin: 0;
@@ -16,15 +19,16 @@ const Top = styled.header`
     padding: .3em;
     margin: 0 .7em;
     min-width: 5em;
-    background-color: var(--background);
+    background-color: transparent;
     text-decoration: none;
     font-weight: bold;
-    color: var(--detalhe);
+    color: #fff;
     text-transform: uppercase;
-    /*border-radius: .3em;*/
+    border: 2px solid #fff;
     &:hover{
       background-color: var(--destaque);
       color: var(--secundaria);
+      border-color: var(--destaque);
     }
   }
 `
