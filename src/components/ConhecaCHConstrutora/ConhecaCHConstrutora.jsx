@@ -149,8 +149,8 @@ const ConhecaCHConstrutora = () => {
         <ColunaImagem>
           <ImagemWrapper>
             <Imagem
-              src="/imagens/fundo_predio.png"
-              alt="Imagem representando a CH Construtora"
+              src="/imagens/conheca_ch.png"
+              alt="Equipe da CH Construtora trabalhando em um projeto"
             />
           </ImagemWrapper>
         </ColunaImagem>
