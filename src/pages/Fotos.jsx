@@ -1,12 +1,12 @@
 import FotoCard from "../components/FotoCard/FotoCard";
 import ListContainer from "../components/ListContainer/ListContainer";
 import dados from "../data/computadores.json";
-import Protegida from "./Protegida";
+import Base from "./Base";
 
 const Fotos = () => {
  
   return (
-      <Protegida>
+      <Base>
         <ListContainer>
           {dados.map(
             (el, index) => (
@@ -20,7 +20,7 @@ const Fotos = () => {
               )
           )}
           </ListContainer>
-      </Protegida>      
+      </Base>      
  )
 };
 
