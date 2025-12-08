@@ -20,7 +20,7 @@ const BannerTexto = styled.div`
   align-items: center;
 
   h1{
-    padding-top: 8em;
+    padding-top: 4em;
     font-size: 4rem;
     font-style: normal;
     font-weight: 400;
