@@ -57,6 +57,23 @@ const TextoSecundario = styled.p`
   margin-right: auto;
 `
 
+const BotaoContato = styled.button`
+  margin-top: 2.99rem;
+  width: 14rem;
+  height: 2.875rem;
+  border-radius: 0.9375rem;
+  background: linear-gradient(180deg, #BDAD77 0%, #575037 100%);
+  color: #FFF;
+  font-family: Alata;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+`
+
 const BotaoScroll = styled.button`
   margin-top: 7.56rem;
   width: 4rem;
@@ -82,4 +99,4 @@ const TextoRole = styled.p`
   text-transform: uppercase;
 `
 
-export { BannerEstilizado, Filtro, BannerTexto, PalavraDestaque, TextoSecundario, BotaoScroll, TextoRole }
+export { BannerEstilizado, Filtro, BannerTexto, PalavraDestaque, TextoSecundario, BotaoScroll, TextoRole, BotaoContato }
