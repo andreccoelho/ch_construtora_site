@@ -26,7 +26,11 @@ export const SecaoContatoWrapper = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
-  background: #212121;
+  background-color: #141414;
+  background-image: url("/imagens/fundo 2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   padding: 4rem 1rem 4rem 1rem;
 `;
 
@@ -38,7 +42,6 @@ export const SecaoContato = styled.div`
   column-gap: 4rem;
   row-gap: 3rem;
   position: relative;
-  // background: url("/imagens/fundo 2.png") lightgray -37.04px -182px / 105.144% 152.865% no-repeat;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
