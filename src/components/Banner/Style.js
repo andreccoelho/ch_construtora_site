@@ -70,6 +70,7 @@ const BotaoContato = styled.button`
     text-transform: uppercase;
     border: none;
     cursor: pointer;
+    margin-bottom: 7rem;
 `
 
 const BotaoScroll = styled.button`
