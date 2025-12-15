@@ -9,6 +9,7 @@ import Atletas from "./pages/Atletas";
 import Sobre from "./pages/Sobre";
 import Obras from "./pages/Obras";
 import Contato from "./pages/Contato";
+import Condominio from "./pages/Condominio";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -23,6 +24,7 @@ root.render(
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/obras" element={<Obras />} />
         <Route path="/contato" element={<Contato />} />
+        <Route path="/condominios/:slug" element={<Condominio />} />
       </Routes>
     </HashRouter>
   </React.StrictMode>
