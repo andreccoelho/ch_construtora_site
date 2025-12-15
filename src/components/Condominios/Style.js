@@ -50,7 +50,7 @@ export const ImagemCondominio = styled.div`
   width: 33.6875rem;
   height: 18.25rem;
   aspect-ratio: 539 / 292;
-  border-radius: 1.25rem;
+  border-radius: 1.25rem 1.25rem 0 0;
   background: ${({ imagem }) => `url(${imagem}) lightgray 50% / cover no-repeat`};
 
   @media (max-width: 600px) {
@@ -60,8 +60,7 @@ export const ImagemCondominio = styled.div`
 
 export const NomeCondominioWrapper = styled.div`
   width: 33.6875rem;
-  height: 25.5rem;
-  border-radius: 1.25rem;
+  border-radius: 0 0 1.25rem 1.25rem;
   background: #000;
   display: flex;
   align-items: center;
@@ -70,7 +69,6 @@ export const NomeCondominioWrapper = styled.div`
 
   @media (max-width: 600px) {
     width: 100%;
-    height: auto;
   }
 `;
 
