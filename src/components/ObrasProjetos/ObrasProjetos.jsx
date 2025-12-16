@@ -30,9 +30,9 @@ const IconeRoloPintura = () => (
   </svg>
 );
 
-const ObrasProjetos = () => {
+const ObrasProjetos = (props) => {
   return (
-    <SecaoObrasProjetos>
+    <SecaoObrasProjetos {...props}>
       <ConteudoColunas>
         <Coluna>
           <LinhaIconeTexto>

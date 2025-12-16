@@ -2,7 +2,7 @@ import { FooterWrapper, LogoWrapper, SocialIconsRow, LegalText } from "./Style";
 
 const Footer = () => {
   return (
-    <FooterWrapper>
+    <FooterWrapper id="footer">
       <LogoWrapper>
         <img src="/imagens/logo.svg" alt="CH Construtora logo" />
       </LogoWrapper>
