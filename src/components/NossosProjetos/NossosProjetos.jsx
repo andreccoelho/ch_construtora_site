@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   SecaoNossosProjetos,
   ConteudoProjetos,
@@ -54,6 +55,8 @@ const IconeSeta = () => (
 );
 
 const NossosProjetos = () => {
+  const navigate = useNavigate();
+
   return (
     <SecaoNossosProjetos>
       <TituloSecao>Nossos Projetos</TituloSecao>
@@ -63,45 +66,25 @@ const NossosProjetos = () => {
             <ImagemContainer>
               <WrapperImagemAlan>
                 <ImagemProjeto
-                  src="/imagens/projetoalan.png"
-                  alt="Projeto Alan Anderson"
+                  src="/imagens/projetos/Projeto-Fabio-e-Raniele/Fachada/f_1---Photo.jpg"
+                  alt="Projeto no Condomínio Villa Blanca I"
                 />
               </WrapperImagemAlan>
               <InfoAlan>
                 <LinhaTituloIcone>
-                  <TituloProjeto>Alan Anderson</TituloProjeto>
-                  <IconeSetaWrapper>
+                  <TituloProjeto>Villa Blanca I</TituloProjeto>
+                  <IconeSetaWrapper
+                    onClick={() => navigate("/condominios/villa-blanca-i")}
+                  >
                     <IconeSeta />
                   </IconeSetaWrapper>
                 </LinhaTituloIcone>
                 <DescricaoProjeto>
-                  Residência moderna com piscina, pergolado e ampla área
-                  envidraçada integrada ao lazer.
+                  Condomínio de alto padrão com casas modernas, lazer
+                  completo, segurança 24h e localização privilegiada no
+                  Recreio dos Bandeirantes.
                 </DescricaoProjeto>
               </InfoAlan>
-            </ImagemContainer>
-          </CardProjeto>
-
-          <CardProjeto>
-            <ImagemContainer>
-              <WrapperImagemCarla>
-                <ImagemProjeto
-                  src="/imagens/projetocarla.png"
-                  alt="Projeto Carla"
-                />
-              </WrapperImagemCarla>
-              <InfoCarla>
-                <LinhaTituloIcone>
-                  <TituloProjeto>Carla</TituloProjeto>
-                  <IconeSetaWrapper>
-                    <IconeSeta />
-                  </IconeSetaWrapper>
-                </LinhaTituloIcone>
-                <DescricaoProjeto>
-                  Projeto residencial com integração entre área gourmet e
-                  living, priorizando conforto e iluminação natural.
-                </DescricaoProjeto>
-              </InfoCarla>
             </ImagemContainer>
           </CardProjeto>
         </Coluna>
@@ -111,20 +94,23 @@ const NossosProjetos = () => {
             <ImagemContainer>
               <WrapperImagemAlessandra>
                 <ImagemProjeto
-                  src="/imagens/projetoalessandra.png"
-                  alt="Projeto Alessandra"
+                  src="/imagens/projetos/projeto-alessandra/A_1---Photo.jpg"
+                  alt="Projeto no Condomínio Villa Blanca II"
                 />
               </WrapperImagemAlessandra>
               <InfoAlessandra>
                 <LinhaTituloIcone>
-                  <TituloProjeto>Alessandra</TituloProjeto>
-                  <IconeSetaWrapper>
+                  <TituloProjeto>Villa Blanca II</TituloProjeto>
+                  <IconeSetaWrapper
+                    onClick={() => navigate("/condominios/villa-blanca-ii")}
+                  >
                     <IconeSeta />
                   </IconeSetaWrapper>
                 </LinhaTituloIcone>
                 <DescricaoProjeto>
-                  Arquitetura contemporânea com volumetria marcante e fachadas
-                  em vidro.
+                  Condomínio moderno com extensa área de lazer, opções de
+                  personalização e infraestrutura completa para toda a
+                  família.
                 </DescricaoProjeto>
               </InfoAlessandra>
             </ImagemContainer>
@@ -134,20 +120,22 @@ const NossosProjetos = () => {
             <ImagemContainer>
               <WrapperImagemFabio>
                 <ImagemProjeto
-                  src="/imagens/projetofabio.png"
-                  alt="Projeto Fábio"
+                  src="/imagens/projetos/projeto-alanderson/Alan-SF-01.jpg"
+                  alt="Projeto no Condomínio Sagrada Família"
                 />
               </WrapperImagemFabio>
               <InfoFabio>
                 <LinhaTituloIcone>
-                  <TituloProjeto>Fábio</TituloProjeto>
-                  <IconeSetaWrapper>
+                  <TituloProjeto>Sagrada Família</TituloProjeto>
+                  <IconeSetaWrapper
+                    onClick={() => navigate("/condominios/sagrada-familia")}
+                  >
                     <IconeSeta />
                   </IconeSetaWrapper>
                 </LinhaTituloIcone>
                 <DescricaoProjeto>
-                  Residência de alto padrão com destaque para área social e
-                  integração com o jardim.
+                  Empreendimento de alto padrão com arquitetura sofisticada,
+                  ambientes amplos, lazer completo e segurança 24h.
                 </DescricaoProjeto>
               </InfoFabio>
             </ImagemContainer>
@@ -155,7 +143,7 @@ const NossosProjetos = () => {
         </Coluna>
       </ConteudoProjetos>
 
-      <BotaoVerProjetos>
+      <BotaoVerProjetos onClick={() => navigate("/obras")}>
         Veja todos os projetos
       </BotaoVerProjetos>
     </SecaoNossosProjetos>

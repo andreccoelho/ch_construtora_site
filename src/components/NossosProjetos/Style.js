@@ -48,7 +48,7 @@ export const CardProjeto = styled.div`
 export const ImagemProjeto = styled.img`
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   border-radius: 0.625rem;
 `;

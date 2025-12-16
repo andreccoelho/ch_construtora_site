@@ -18,7 +18,7 @@ const Home = () => {
     const startY = window.scrollY || window.pageYOffset;
     const targetY = target.getBoundingClientRect().top + startY;
     const distance = targetY - startY;
-    const duration = 3000; // duração do auto-scroll em ms (3s)
+    const duration = 12000; // duração do auto-scroll em ms (12s)
 
     let startTime = null;
 
