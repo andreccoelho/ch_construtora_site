@@ -98,8 +98,7 @@ const MobileMenu = styled.nav`
   top: 0;
   right: 0;
   bottom: 0;
-  width: 70vw;
-  max-width: 18.75rem;
+  width: min(65vw, 18.75rem);
   background: rgba(0, 0, 0, 0.94);
   backdrop-filter: blur(4px);
   padding: 5rem 2rem 2rem 2rem;

@@ -54,6 +54,7 @@ export const CardProjeto = styled.div`
 
     @media (max-width: 900px) {
         display: block;
+        overflow: hidden;
     }
 `;
 
@@ -241,5 +242,9 @@ export const ImagemContainer = styled.div`
     position: relative;
     border-radius: 0.625rem;
     overflow: visible;
+
+    @media (max-width: 900px) {
+        overflow: hidden;
+    }
 `;
 
