@@ -28,7 +28,7 @@ const ContatoSessao = () => {
         </TextoDivisor>
       </DivisorContato>
 
-      <SecaoContatoWrapper>
+      <SecaoContatoWrapper id="contato">
         <SecaoContato>
           <ColunaEsquerda>
             <TituloContato>Contato</TituloContato>
