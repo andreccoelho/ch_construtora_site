@@ -238,20 +238,137 @@ const CONDOMINIOS = {
 };
 
 const CASAS_POR_CONDOMINIO = {
+    "sagrada-familia": [
+        {
+            id: "lote-6",
+            titulo: "Casa – Lote 6 (Quadra D)",
+            descricao:
+                "Residência de 3 pavimentos, projetada para oferecer conforto, funcionalidade e sofisticação. No térreo, conta com garagem, sala de estar, sala de jantar, lavabo, cozinha, lavanderia, uma suíte completa, além de área gourmet integrada à piscina. No primeiro pavimento, possui uma suíte máster com closet e varanda, além de duas suítes adicionais. No segundo pavimento, dispõe de área coberta com lavabo e área descoberta, ideal para lazer ao ar livre.",
+            aVenda: false,
+            fotos: [
+                "/imagens/projetos/projeto-alanderson/Alan SF-01.jpg",
+                "/imagens/projetos/projeto-alanderson/Alan SF-02.jpg",
+                "/imagens/projetos/projeto-alanderson/Alan SF-03.jpg",
+                "/imagens/projetos/projeto-alanderson/Alan SF-04.jpg",
+                "/imagens/projetos/projeto-alanderson/Alan SF-06.jpg",
+                "/imagens/projetos/projeto-alanderson/Alan SF-07.jpg",
+                "/imagens/projetos/projeto-alanderson/Pergolado frontal.jpg",
+                "/imagens/projetos/projeto-alanderson/Pergolado frontal-2.jpg",
+            ],
+        },
+    ],
+    "villa-blanca-ii": [
+        {
+            id: "lote-55",
+            titulo: "Casa – Lote 55 (Alessandra)",
+            descricao:
+                "Casa de 4 pavimentos, com projeto moderno e ambientes amplos. Subsolo com garagem, lavabo, lavanderia e depósito. Térreo com living integrado, sala de estar com pé-direito duplo, sala de jantar, lavabo social, cozinha com área gourmet, piscina e lavabo externo. Primeiro pavimento com três suítes, duas com closet e varanda. Segundo pavimento com ambiente versátil com banheiro, varanda e área descoberta.",
+            aVenda: false,
+            fotos: [
+                "/imagens/projetos/projeto-alessandra/A_1 - Photo.jpg",
+                "/imagens/projetos/projeto-alessandra/A_2 - Foto.jpg",
+                "/imagens/projetos/projeto-alessandra/A_3 - Foto.jpg",
+                "/imagens/projetos/projeto-alessandra/A_4 - Foto.jpg",
+                "/imagens/projetos/projeto-alessandra/A_5 - Foto.jpg",
+                "/imagens/projetos/projeto-alessandra/A_6 - Foto.jpg",
+                "/imagens/projetos/projeto-alessandra/A_7 - Foto.jpg",
+                "/imagens/projetos/projeto-alessandra/A_8 - Foto.jpg",
+                "/imagens/projetos/projeto-alessandra/A_10 - Foto.jpg",
+                "/imagens/projetos/projeto-alessandra/A_1 - Photo - Copia.jpg",
+                "/imagens/projetos/projeto-alessandra/A_1 - Photo - Copia (2).jpg",
+            ],
+        },
+        {
+            id: "lote-8",
+            titulo: "Casa – Lote 8 (Carla)",
+            descricao:
+                "Residência de 3 pavimentos, com arquitetura contemporânea e layout funcional. Térreo com garagem, sala de estar com pé-direito duplo, sala de jantar, lavabo social, cozinha, despensa, lavanderia, área gourmet, piscina e banheiro externo. Primeiro pavimento com três suítes com closet e varanda. Segundo pavimento com ambiente multifuncional com banheiro e área descoberta.",
+            aVenda: false,
+            fotos: [
+                "/imagens/projetos/projeto-carla/FC_1 - Photo.jpg",
+                "/imagens/projetos/projeto-carla/FC_2 - Foto.jpg",
+                "/imagens/projetos/projeto-carla/FC_3 - Foto.jpg",
+                "/imagens/projetos/projeto-carla/FC_4 - Foto.jpg",
+                "/imagens/projetos/projeto-carla/FC_5 - Foto.jpg",
+                "/imagens/projetos/projeto-carla/FC_6 - Foto.jpg",
+                "/imagens/projetos/projeto-carla/FC_7 - Foto.jpg",
+                "/imagens/projetos/projeto-carla/FC_8 - Foto.jpg",
+            ],
+        },
+    ],
     "villa-blanca-i": [
         {
             id: "lote-43",
-            titulo: "Casa – Lote 43",
+            titulo: "Casa – Lote 43 (Fábio e Raniele)",
             descricao:
-                "4 pavimentos (incluindo subsolo); 5 suítes distribuídas pelos três andares habitáveis; área gourmet no térreo e na cobertura; piscina e spa com hidromassagem; elevador; garagem subterrânea; suíte master exclusiva na cobertura, com área de spa privativa.",
-            aVenda: true,
+                "Residência de 4 pavimentos, com projeto sofisticado e foco em lazer e exclusividade. Subsolo com garagem, elevador e banheiro. Térreo com área gourmet, lavabo externo, sala de jantar, lavabo social, cozinha, piscina e uma suíte completa. Primeiro pavimento com três suítes, sendo uma com varanda. Segundo pavimento com suíte máster com closet, banheiro e área de spa com hidromassagem, além de varanda com espaço gourmet.",
+            aVenda: false,
             fotos: [
-                "/imagens/lote45_1.jpg",
-                "/imagens/lote45_2.png",
-                "/imagens/lote45_3.png",
-                "/imagens/lote45_4.jpg",
-                "/imagens/lote45_5.jpg",
-                "/imagens/lote45_6.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_1 - Photo.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_2 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_3 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_4 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_5 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_6 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_7 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_8 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_9 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_21 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_23 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_24 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_25 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_26 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_27 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_28 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_29 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_31 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_33 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_34 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_35 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_36 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_39 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_40 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_41 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_42 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_44 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_45 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_46 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_47 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_48 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_50 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_71 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_72 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_73 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_74 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_75 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_76 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_77 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_78 - Foto.jpg",
+                "/imagens/projetos/Projeto Fabio e Raniele/Interiores projeto Fabio e Raniele/FR_79 - Foto.jpg",
+            ],
+        },
+        {
+            id: "lote-3",
+            titulo: "Casa – Lote 3 (CH)",
+            descricao:
+                "Casa de 3 pavimentos, com ambientes amplos e bem distribuídos. Térreo com garagem, sala de estar com pé-direito duplo, sala de jantar, lavabo social, cozinha, lavanderia, área gourmet, piscina e banheiro externo. Primeiro pavimento com três suítes, sendo uma suíte máster, todas com closet e varanda. Segundo pavimento com ambiente com banheiro que pode ser usado como quarto, sala de jogos ou cinema, além de área descoberta.",
+            aVenda: false,
+            fotos: [
+                "/imagens/projetos/projeto-ch/VB_21.jpg",
+                "/imagens/projetos/projeto-ch/VB_26.jpg",
+                "/imagens/projetos/projeto-ch/VB_27.jpg",
+                "/imagens/projetos/projeto-ch/VB_28.jpg",
+                "/imagens/projetos/projeto-ch/VB_29.jpg",
+                "/imagens/projetos/projeto-ch/VB_30.jpg",
+                "/imagens/projetos/projeto-ch/VB_31.jpg",
+                "/imagens/projetos/projeto-ch/VB_32.jpg",
+                "/imagens/projetos/projeto-ch/VB_33.jpg",
+                "/imagens/projetos/projeto-ch/VB_34.jpg",
+                "/imagens/projetos/projeto-ch/VB_35.jpg",
+                "/imagens/projetos/projeto-ch/VB_36.jpg",
+                "/imagens/projetos/projeto-ch/VB_37.jpg",
+                "/imagens/projetos/projeto-ch/VB_38.jpg",
+                "/imagens/projetos/projeto-ch/VB_39.jpg",
             ],
         },
     ],
@@ -304,34 +421,38 @@ const Condominio = () => {
             {casas.length > 0 && (
                 <SecaoCasas>
                     <ConteudoCasas>
-                        {casas.map((casa) => (
-                            <React.Fragment key={casa.id}>
-                                <CardCasa>
-                                    <ColunaInfo>
-                                        <TituloCasa>{casa.titulo}</TituloCasa>
-                                        <DescricaoCasa>{casa.descricao}</DescricaoCasa>
-                                        <BotaoVerFotos type="button" onClick={() => abrirModal(casa.fotos, 0)}>
-                                            Ver fotos
-                                        </BotaoVerFotos>
-                                        {casa.aVenda && (
-                                            <SeloAVendaWrapper>
-                                                <SeloAVenda/>
-                                            </SeloAVendaWrapper>
-                                        )}
-                                    </ColunaInfo>
-                                    <ColunaGaleria>
-                                        {casa.fotos.map((foto, index) => (
-                                            <FotoThumb
-                                                key={foto}
-                                                imagem={foto}
-                                                onClick={() => abrirModal(casa.fotos, index)}
-                                            />
-                                        ))}
-                                    </ColunaGaleria>
-                                </CardCasa>
-                                <Separador/>
-                            </React.Fragment>
-                        ))}
+                        {casas.map((casa) => {
+                            const thumbs = casa.fotos.slice(0, 6);
+
+                            return (
+                                <React.Fragment key={casa.id}>
+                                    <CardCasa>
+                                        <ColunaInfo>
+                                            <TituloCasa>{casa.titulo}</TituloCasa>
+                                            <DescricaoCasa>{casa.descricao}</DescricaoCasa>
+                                            <BotaoVerFotos type="button" onClick={() => abrirModal(casa.fotos, 0)}>
+                                                Ver fotos
+                                            </BotaoVerFotos>
+                                            {casa.aVenda && (
+                                                <SeloAVendaWrapper>
+                                                    <SeloAVenda/>
+                                                </SeloAVendaWrapper>
+                                            )}
+                                        </ColunaInfo>
+                                        <ColunaGaleria>
+                                            {thumbs.map((foto, index) => (
+                                                <FotoThumb
+                                                    key={foto}
+                                                    imagem={foto}
+                                                    onClick={() => abrirModal(casa.fotos, index)}
+                                                />
+                                            ))}
+                                        </ColunaGaleria>
+                                    </CardCasa>
+                                    <Separador/>
+                                </React.Fragment>
+                            );
+                        })}
                     </ConteudoCasas>
                 </SecaoCasas>
             )}
