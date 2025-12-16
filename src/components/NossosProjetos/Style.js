@@ -22,6 +22,9 @@ export const ConteudoProjetos = styled.div`
     @media (max-width: 900px) {
         grid-template-columns: 1fr;
         row-gap: 3rem;
+        width: auto;
+        max-width: max-content;
+        margin-top: 0;
     }
 `;
 
@@ -88,6 +91,10 @@ export const LinhaTituloIcone = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+    @media (max-width: 900px) {
+        justify-content: center;
+    }
 `;
 
 export const TituloProjeto = styled.h3`
@@ -112,6 +119,10 @@ export const DescricaoProjeto = styled.p`
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+    
+    @media (max-width: 900px) {
+        text-align: center;
+    }
 `;
 
 export const IconeSetaWrapper = styled.div`
