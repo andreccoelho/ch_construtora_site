@@ -1,5 +1,6 @@
+import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Top } from "./Style";
+import { Top, MenuButton, MobileMenu, MobileMenuLinks, MobileBackdrop } from "./Style";
 
 const Header = () => {
   const location = useLocation();
@@ -10,10 +11,15 @@ const Header = () => {
   const isObras = pathname.startsWith("/obras") || pathname.startsWith("/condominios");
   const isContato = isHome && location.state && location.state.scrollToContact;
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <Top>
       <img src="/imagens/logo.svg" alt="CH Construtora logo" />
-      <nav>
+
+      <nav className="desktop-nav">
         <Link to="/" className={isHome && !isContato ? "active" : ""}>
           Início
         </Link>
@@ -31,6 +37,53 @@ const Header = () => {
           Contato
         </Link>
       </nav>
+
+      <MenuButton
+        type="button"
+        aria-label="Abrir menu de navegação"
+        aria-expanded={menuOpen}
+        onClick={() => setMenuOpen((prev) => !prev)}
+      >
+        <span />
+        <span />
+        <span />
+      </MenuButton>
+
+      {menuOpen && <MobileBackdrop onClick={closeMenu} />}
+
+      <MobileMenu open={menuOpen} aria-hidden={!menuOpen}>
+        <MobileMenuLinks>
+          <Link
+            to="/"
+            className={isHome && !isContato ? "active" : ""}
+            onClick={closeMenu}
+          >
+            Início
+          </Link>
+          <Link
+            to="/sobre"
+            className={isSobre ? "active" : ""}
+            onClick={closeMenu}
+          >
+            Sobre
+          </Link>
+          <Link
+            to="/obras"
+            className={isObras ? "active" : ""}
+            onClick={closeMenu}
+          >
+            Obras
+          </Link>
+          <Link
+            to="/"
+            state={{ scrollToContact: true }}
+            className={isContato ? "active" : ""}
+            onClick={closeMenu}
+          >
+            Contato
+          </Link>
+        </MobileMenuLinks>
+      </MobileMenu>
     </Top>
   );
 };

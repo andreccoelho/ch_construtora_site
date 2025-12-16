@@ -27,6 +27,16 @@ const BannerTexto = styled.div`
         max-width: 57rem;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            padding-top: 6rem;
+            font-size: 2.2rem;
+            max-width: 24rem;
+        }
     }
 `
 
@@ -38,6 +48,10 @@ const PalavraDestaque = styled.span`
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+
+    @media (max-width: 768px) {
+        font-size: 2.2rem;
+    }
 `
 
 const TextoSecundario = styled.p`
@@ -50,9 +64,17 @@ const TextoSecundario = styled.p`
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
-    max-width: 57rem;
+    max-width: 40rem;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    @media (max-width: 768px) {
+        font-size: 0.95rem;
+        max-width: 22rem;
+        margin-top: 1.5rem;
+    }
 `
 
 const BotaoContato = styled.button`
@@ -70,11 +92,15 @@ const BotaoContato = styled.button`
     text-transform: uppercase;
     border: none;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+        margin-top: 3rem;
+    }
     margin-bottom: 7rem;
 `
 
 const BotaoScroll = styled.button`
-    margin-top: 7.56rem;
+    margin-top: 5rem;
     width: 4rem;
     height: 4rem;
     display: flex;

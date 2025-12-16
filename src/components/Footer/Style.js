@@ -11,6 +11,11 @@ export const FooterWrapper = styled.footer`
   padding: 4rem 1rem;
   box-sizing: border-box;
   gap: 4rem; /* espaçamento entre linhas */
+
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+    gap: 3rem;
+  }
 `;
 
 export const LogoWrapper = styled.div`
@@ -29,6 +34,11 @@ export const SocialIconsRow = styled.div`
     width: 2.5rem;
     height: 2.5rem;
     flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 `;
 

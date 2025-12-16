@@ -21,6 +21,7 @@ export const ConteudoProjetos = styled.div`
 
     @media (max-width: 900px) {
         grid-template-columns: 1fr;
+        row-gap: 3rem;
     }
 `;
 
@@ -35,16 +36,25 @@ export const TituloSecao = styled.h2`
     color: #bdad77;
     text-align: center;
     font-family: "Alata", sans-serif;
-    font-size: 3rem;
+    font-size: 4rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+
+    @media (max-width: 900px) {
+        text-align: center;
+        font-size: 2.2rem;
+    }
 `;
 
 export const CardProjeto = styled.div`
     position: relative;
     display: inline-block;
+
+    @media (max-width: 900px) {
+        display: block;
+    }
 `;
 
 export const ImagemProjeto = styled.img`
@@ -63,6 +73,14 @@ export const InfoCard = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+
+    @media (max-width: 900px) {
+        position: static;
+        margin-top: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
 `;
 
 export const LinhaTituloIcone = styled.div`
@@ -101,6 +119,7 @@ export const IconeSetaWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 `;
 
 export const BotaoVerProjetos = styled.button`
@@ -127,11 +146,23 @@ export const InfoAlan = styled(InfoCard)`
     height: 17.5rem;
     bottom: -3rem; /* 5rem para dentro da imagem (altura 33rem) deixa 3rem para fora */
     right: -3rem; /* 3rem para fora à direita */
+
+    @media (max-width: 900px) {
+        width: 100%;
+        height: auto;
+        bottom: auto;
+        right: auto;
+    }
 `;
 
 export const WrapperImagemAlan = styled.div`
     width: 31rem;
     height: 33rem;
+
+    @media (max-width: 900px) {
+        width: 100%;
+        height: auto;
+    }
 `;
 
 export const InfoCarla = styled(InfoCard)`
@@ -139,11 +170,23 @@ export const InfoCarla = styled(InfoCard)`
     height: 17.5rem;
     bottom: -4.6rem; /* 12rem para dentro da imagem de 32.4rem ≈ metade, deixando parte para fora */
     left: -5rem; /* 5rem à mostra na lateral esquerda, restante para fora à direita */
+
+    @media (max-width: 900px) {
+        width: 100%;
+        height: auto;
+        bottom: auto;
+        left: auto;
+    }
 `;
 
 export const WrapperImagemCarla = styled.div`
     width: 30.5rem;
     height: 32.4rem;
+
+    @media (max-width: 900px) {
+        width: 100%;
+        height: auto;
+    }
 `;
 
 export const InfoAlessandra = styled(InfoCard)`
@@ -151,11 +194,23 @@ export const InfoAlessandra = styled(InfoCard)`
     height: 17.3rem;
     top: -6rem; /* sobrepõe 6rem da parte superior */
     right: -4.63rem; /* deixa 4.63rem da imagem à mostra, card escapa para a esquerda */
+
+    @media (max-width: 900px) {
+        width: 100%;
+        height: auto;
+        top: auto;
+        right: auto;
+    }
 `;
 
 export const WrapperImagemAlessandra = styled.div`
     width: 23.6rem;
     height: 29.6rem;
+
+    @media (max-width: 900px) {
+        width: 100%;
+        height: auto;
+    }
 `;
 
 export const InfoFabio = styled(InfoCard)`
@@ -163,11 +218,23 @@ export const InfoFabio = styled(InfoCard)`
     height: 13.5rem;
     top: -4rem; /* entra 4rem sobre a parte superior da imagem */
     right: -6.87rem; /* deixa 6.87rem à mostra na lateral esquerda, card vaza para a esquerda */
+
+    @media (max-width: 900px) {
+        width: 100%;
+        height: auto;
+        top: auto;
+        right: auto;
+    }
 `;
 
 export const WrapperImagemFabio = styled.div`
     width: 22.125rem;
     height: 20.75rem;
+
+    @media (max-width: 900px) {
+        width: 100%;
+        height: auto;
+    }
 `;
 
 export const ImagemContainer = styled.div`

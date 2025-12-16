@@ -10,7 +10,6 @@ import {
   LinhaTituloIcone,
   TituloProjeto,
   DescricaoProjeto,
-  IconeSetaWrapper,
   BotaoVerProjetos,
   InfoAlan,
   InfoCarla,
@@ -73,17 +72,18 @@ const NossosProjetos = () => {
               <InfoAlan>
                 <LinhaTituloIcone>
                   <TituloProjeto>Villa Blanca I</TituloProjeto>
-                  <IconeSetaWrapper
-                    onClick={() => navigate("/condominios/villa-blanca-i")}
-                  >
-                    <IconeSeta />
-                  </IconeSetaWrapper>
                 </LinhaTituloIcone>
                 <DescricaoProjeto>
                   Condomínio de alto padrão com casas modernas, lazer
                   completo, segurança 24h e localização privilegiada no
                   Recreio dos Bandeirantes.
                 </DescricaoProjeto>
+                <BotaoVerProjetos
+                  type="button"
+                  onClick={() => navigate("/condominios/villa-blanca-i")}
+                >
+                  Ver detalhes do projeto
+                </BotaoVerProjetos>
               </InfoAlan>
             </ImagemContainer>
           </CardProjeto>
@@ -101,17 +101,18 @@ const NossosProjetos = () => {
               <InfoAlessandra>
                 <LinhaTituloIcone>
                   <TituloProjeto>Villa Blanca II</TituloProjeto>
-                  <IconeSetaWrapper
-                    onClick={() => navigate("/condominios/villa-blanca-ii")}
-                  >
-                    <IconeSeta />
-                  </IconeSetaWrapper>
                 </LinhaTituloIcone>
                 <DescricaoProjeto>
                   Condomínio moderno com extensa área de lazer, opções de
                   personalização e infraestrutura completa para toda a
                   família.
                 </DescricaoProjeto>
+                <BotaoVerProjetos
+                  type="button"
+                  onClick={() => navigate("/condominios/villa-blanca-ii")}
+                >
+                  Ver detalhes do projeto
+                </BotaoVerProjetos>
               </InfoAlessandra>
             </ImagemContainer>
           </CardProjeto>
@@ -127,16 +128,17 @@ const NossosProjetos = () => {
               <InfoFabio>
                 <LinhaTituloIcone>
                   <TituloProjeto>Sagrada Família</TituloProjeto>
-                  <IconeSetaWrapper
-                    onClick={() => navigate("/condominios/sagrada-familia")}
-                  >
-                    <IconeSeta />
-                  </IconeSetaWrapper>
                 </LinhaTituloIcone>
                 <DescricaoProjeto>
                   Empreendimento de alto padrão com arquitetura sofisticada,
                   ambientes amplos, lazer completo e segurança 24h.
                 </DescricaoProjeto>
+                <BotaoVerProjetos
+                  type="button"
+                  onClick={() => navigate("/condominios/sagrada-familia")}
+                >
+                  Ver detalhes do projeto
+                </BotaoVerProjetos>
               </InfoFabio>
             </ImagemContainer>
           </CardProjeto>

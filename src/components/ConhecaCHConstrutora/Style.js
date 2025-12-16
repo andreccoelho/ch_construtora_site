@@ -34,7 +34,7 @@ export const ColunaImagem = styled.div`
 
 export const ImagemWrapper = styled.div`
   width: 100%;
-  max-width: 32rem;
+  max-width: 28rem;
   border-radius: 0.625rem;
   overflow: hidden;
 `;
@@ -49,6 +49,11 @@ export const Imagem = styled.img`
 export const ColunaTexto = styled.div`
   color: #fff;
   font-family: "Alata", sans-serif;
+  max-width: 32rem;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 export const Titulo = styled.h2`
@@ -60,6 +65,11 @@ export const Titulo = styled.h2`
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 2rem;
+  }
 `;
 
 export const Descricao = styled.p`
@@ -72,6 +82,12 @@ export const Descricao = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
+
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+  }
 `;
 
 export const MiniSecao = styled.div`
@@ -80,6 +96,12 @@ export const MiniSecao = styled.div`
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: 3.44rem; /* distância horizontal entre retângulos */
   row-gap: 3.56rem; /* distância vertical entre retângulos */
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 1.75rem;
+  }
 `;
 
 export const Retangulo = styled.div`
@@ -89,6 +111,11 @@ export const Retangulo = styled.div`
   padding: 1.25rem 1.5rem;
   border-radius: 0.3125rem;
   border: 2px solid #bdad77;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    padding: 1rem 1.25rem;
+  }
 `;
 
 export const IconeWrapper = styled.div`
@@ -98,6 +125,11 @@ export const IconeWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
 `;
 
 export const TextoRetangulo = styled.span`

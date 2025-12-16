@@ -7,6 +7,10 @@ export const SecaoObrasProjetos = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 3rem 1rem 2.81rem 1rem;
+
+  @media (max-width: 768px) {
+    padding: 2.5rem 1rem 2.5rem 1rem;
+  }
 `;
 
 export const ConteudoColunas = styled.div`
@@ -17,6 +21,10 @@ export const ConteudoColunas = styled.div`
   gap: 4rem;
   flex-wrap: wrap;
   text-align: center;
+
+  @media (max-width: 768px) {
+    gap: 2.5rem;
+  }
 `;
 
 export const Coluna = styled.div`
@@ -54,6 +62,10 @@ export const TituloColuna = styled.h2`
   line-height: normal;
   text-transform: uppercase;
   margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
+  }
 `;
 
 export const DescricaoColuna = styled.p`
@@ -67,6 +79,10 @@ export const DescricaoColuna = styled.p`
   text-transform: uppercase;
   text-align: center;
   max-width: 25rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const BotaoSaibaMais = styled.button`

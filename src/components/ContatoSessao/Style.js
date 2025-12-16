@@ -8,6 +8,10 @@ export const DivisorContato = styled.section`
   align-items: center;
   justify-content: center;
   padding: 0 3rem;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5rem;
+  }
 `;
 
 export const TextoDivisor = styled.p`
@@ -20,6 +24,13 @@ export const TextoDivisor = styled.p`
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 1.05rem;
+    max-width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 export const SecaoContatoWrapper = styled.section`
@@ -32,6 +43,10 @@ export const SecaoContatoWrapper = styled.section`
   background-size: cover;
   background-position: center;
   padding: 4rem 1rem 4rem 1rem;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem 3rem 1rem;
+  }
 `;
 
 export const SecaoContato = styled.div`
@@ -45,12 +60,18 @@ export const SecaoContato = styled.div`
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+    row-gap: 2.5rem;
   }
 `;
 
 export const ColunaEsquerda = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export const TituloContato = styled.h2`
@@ -78,6 +99,10 @@ export const LinhaEndereco = styled.p`
   font-family: "Alata", sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 export const BlocoEndereco = styled.div`
@@ -98,6 +123,10 @@ export const TextoHorario = styled.p`
   font-family: "Alata", sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
 `;
 
 export const BlocoHorario = styled.div`
@@ -140,6 +169,10 @@ export const CampoInput = styled.input`
   box-shadow: 0 4px 18.7px 1px rgba(0, 0, 0, 0.17);
   text-transform: uppercase;
   margin-bottom: 1.63rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const CampoTextarea = styled.textarea`
@@ -157,6 +190,12 @@ export const CampoTextarea = styled.textarea`
   resize: none;
   min-height: 8rem;
   margin-bottom: 4rem;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    min-height: 6rem;
+    margin-bottom: 3rem;
+  }
 `;
 
 export const BotaoEnviar = styled.button`
