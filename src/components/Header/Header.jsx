@@ -17,7 +17,9 @@ const Header = () => {
 
   return (
     <Top>
-      <img src="/imagens/logo.svg" alt="CH Construtora logo" />
+      <Link to="/">
+        <img src="/imagens/logo.svg" alt="CH Construtora logo" />
+      </Link>
 
       <nav className="desktop-nav">
         <Link to="/" className={isHome && !isContato ? "active" : ""}>
