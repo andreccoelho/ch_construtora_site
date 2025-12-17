@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Top = styled.header`
-  padding: 1.5em 2.5em;
+  padding: 1.5em 7.5em;
   position: absolute;
   top: 0.69rem;
   left: 0;
@@ -26,9 +26,9 @@ const Top = styled.header`
   a {
     color: #fff;
     font-family: Alata;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     line-height: normal;
     text-decoration: none;
 

@@ -29,7 +29,7 @@ const Header = () => {
           Sobre
         </Link>
         <Link to="/obras" className={isObras ? "active" : ""}>
-          Obras
+          Projetos
         </Link>
         <Link
           to="/"
