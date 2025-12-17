@@ -7,15 +7,15 @@ const NossoCompromisso = () => {
       <Conteudo>
         <Titulo>Nosso compromisso</Titulo>
         <TextoCorpo>
-          TRABALHAMOS COM FOCO NA EXCELÊNCIA E NO COMPROMISSO COM O CLIENTE. CADA
-          PROJETO É TRATADO DE FORMA ÚNICA, RESPEITANDO AS PARTICULARIDADES E
-          DESEJOS DE QUEM CONFIA EM NOSSO TRABALHO.
-        </TextoCorpo>
-        <TextoCorpo>
-          UTILIZAMOS MATERIAIS DE ALTA QUALIDADE, RESPEITAMOS RIGOROSAMENTE AS
-          NORMAS TÉCNICAS E AMBIENTAIS, E BUSCAMOS CONSTANTEMENTE INOVAÇÕES
-          TECNOLÓGICAS PARA GARANTIR MÁXIMA EFICIÊNCIA E SUSTENTABILIDADE EM
-          NOSSOS PROJETOS.
+          Trabalhamos com foco na excelência e no compromisso com o cliente. Cada
+          projeto é tratado de forma única, respeitando as particularidades e
+            desejos de quem confia em nosso trabalho.
+            </TextoCorpo>
+            <TextoCorpo>
+              Utilizamos materiais de alta qualidade, respeitamos rigorosamente as
+            normas técnicas e ambientais, e buscamos constantemente inovações
+            tecnológicas para garantir máxima eficiência e sustentabilidade em
+            nossos projetos.
         </TextoCorpo>
       </Conteudo>
     </SecaoNossoCompromisso>

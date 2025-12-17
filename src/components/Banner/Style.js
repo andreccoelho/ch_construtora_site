@@ -12,14 +12,13 @@ const BannerTexto = styled.div`
     color: #FFF;
     text-align: center;
     font-family: "Alata", sans-serif;
-    text-transform: uppercase;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     h1 {
-        padding-top: 5rem;
-
+        padding-top: 10rem;
+        text-transform: uppercase;
         font-size: 4rem;
         font-style: normal;
         font-weight: 400;
@@ -64,7 +63,7 @@ const TextoSecundario = styled.p`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     max-width: 40rem;
     margin-left: auto;
     margin-right: auto;

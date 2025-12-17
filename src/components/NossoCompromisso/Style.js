@@ -45,6 +45,6 @@ export const TextoCorpo = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  text-transform: uppercase;
+  text-transform: initial;
   max-width: 75rem;
 `;

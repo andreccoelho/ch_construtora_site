@@ -13,7 +13,7 @@ export const SecaoPorQueEscolher = styled.section`
   min-height: 36.875rem;
   padding: 4rem 1rem 8.88rem 1rem;
   font-family: "Alata", sans-serif;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   box-sizing: border-box;
 `;
 
@@ -94,5 +94,5 @@ export const CardDescricao = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 `;

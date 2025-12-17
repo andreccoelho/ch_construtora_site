@@ -28,7 +28,8 @@ const PorQueEscolher = () => {
               <TextoHeader>EXPERIÊNCIA</TextoHeader>
             </CardHeader>
             <CardDescricao>
-              MAIS DE 6 ANOS DE ATUAÇÃO ESPECIALIZADA EM CONSTRUÇÕES DE CASAS DE ALTO PADRÃO.
+              Mais de 6 anos de atuação especializada em construções de casas de alto padrão.
+
             </CardDescricao>
           </Card>
 
@@ -38,7 +39,8 @@ const PorQueEscolher = () => {
               <TextoHeader>INOVAÇÃO</TextoHeader>
             </CardHeader>
             <CardDescricao>
-              TECNOLOGIAS MODERNAS E SOLUÇÕES INTELIGENTES PARA SEU PROJETO.
+              Tecnologias modernas e soluções inteligentes para seu projeto.
+
             </CardDescricao>
           </Card>
 
@@ -48,7 +50,8 @@ const PorQueEscolher = () => {
               <TextoHeader>QUALIDADE</TextoHeader>
             </CardHeader>
             <CardDescricao>
-              ALTA QUALIDADE EM CONSTRUÇÃO CIVIL SEM COMPROMETER SEU ORÇAMENTO.
+              Alta qualidade em construção civil sem comprometer seu orçamento.
+
             </CardDescricao>
           </Card>
         </ContainerCards>

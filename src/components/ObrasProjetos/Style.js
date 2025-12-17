@@ -33,7 +33,7 @@ export const Coluna = styled.div`
   align-items: center;
   color: #fff;
   font-family: "Alata", sans-serif;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 `;
 
 export const LinhaIconeTexto = styled.div`
@@ -76,7 +76,7 @@ export const DescricaoColuna = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   text-align: center;
   max-width: 25rem;
 

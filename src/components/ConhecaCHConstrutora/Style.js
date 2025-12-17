@@ -34,9 +34,13 @@ export const ColunaImagem = styled.div`
 
 export const ImagemWrapper = styled.div`
   width: 100%;
-  max-width: 28rem;
+  max-width: 100%;
   border-radius: 0.625rem;
   overflow: hidden;
+    
+    @media screen and (max-width: 768px) {
+        max-width: 28rem;
+    }
 `;
 
 export const Imagem = styled.img`

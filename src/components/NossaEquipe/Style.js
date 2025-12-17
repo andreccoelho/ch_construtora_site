@@ -55,7 +55,7 @@ export const Descricao = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 137.993%;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 
   @media (max-width: 768px) {
     font-size: 1rem;

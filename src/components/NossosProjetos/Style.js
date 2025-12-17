@@ -118,7 +118,7 @@ export const DescricaoProjeto = styled.p`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     
     @media (max-width: 900px) {
         text-align: center;
