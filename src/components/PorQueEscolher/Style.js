@@ -23,6 +23,7 @@ export const Conteudo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 0.5rem;
 `;
 
 export const TituloPrincipal = styled.h2`
@@ -40,10 +41,15 @@ export const ContainerCards = styled.div`
   justify-content: center;
   gap: 3.63rem;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+  }
 `;
 
 export const Card = styled.div`
   width: 22.9375rem;
+  max-width: 100%;
   height: 11.5rem;
   border: 2px solid #bdad77;
   box-sizing: border-box;
@@ -53,6 +59,11 @@ export const Card = styled.div`
   justify-content: center;
   padding: 1rem;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 20rem;
+    max-width: 90vw;
+  }
 `;
 
 export const CardHeader = styled.div`

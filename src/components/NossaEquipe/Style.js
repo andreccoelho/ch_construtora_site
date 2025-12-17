@@ -19,6 +19,7 @@ export const Conteudo = styled.div`
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
     row-gap: 2.5rem;
+    justify-items: center;
   }
 `;
 
@@ -38,6 +39,11 @@ export const Titulo = styled.h2`
   font-weight: 400;
   line-height: 102.327%;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 2.4rem;
+    text-align: center;
+  }
 `;
 
 export const Descricao = styled.p`
@@ -50,12 +56,21 @@ export const Descricao = styled.p`
   font-weight: 400;
   line-height: 137.993%;
   text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 
 export const ColunaImagens = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 export const LinhaImagensSuperiores = styled.div`
@@ -73,11 +88,18 @@ export const ImagemPequena = styled.div`
 export const ImagemPrincipalWrapper = styled.div`
   width: 100%;
   max-width: 28.5625rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const ImagemPrincipal = styled.div`
-  width: 28.5625rem;
-  height: 30.375rem;
+  width: 100%;
+  max-width: 28.5625rem;
+  height: auto;
+  min-height: 18rem;
   aspect-ratio: 457 / 486;
   background: url("/imagens/equipe.jpeg") lightgray -438px -334px / 256.018% 176.955% no-repeat;
 `;

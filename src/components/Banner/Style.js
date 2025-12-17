@@ -18,7 +18,8 @@ const BannerTexto = styled.div`
     align-items: center;
 
     h1 {
-        padding-top: 4em;
+        padding-top: 5rem;
+
         font-size: 4rem;
         font-style: normal;
         font-weight: 400;
@@ -33,7 +34,7 @@ const BannerTexto = styled.div`
 
     @media (max-width: 768px) {
         h1 {
-            padding-top: 6rem;
+            padding-top: 5.5rem;
             font-size: 2.2rem;
             max-width: 24rem;
         }
@@ -94,7 +95,8 @@ const BotaoContato = styled.button`
     cursor: pointer;
 
     @media (max-width: 768px) {
-        margin-top: 3rem;
+        margin-top: 2.5rem;
+        margin-bottom: 4rem;
     }
     margin-bottom: 7rem;
 `

@@ -21,6 +21,8 @@ export const Conteudo = styled.div`
 
   @media (max-width: 900px) {
     width: 100%;
+    align-items: center;
+    text-align: center;
   }
 `;
 
