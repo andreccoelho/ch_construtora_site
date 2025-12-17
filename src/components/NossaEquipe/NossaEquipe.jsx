@@ -5,6 +5,7 @@ import {
   ColunaTexto,
   Titulo,
   Descricao,
+  LinhaConteudo,
   ColunaImagens,
   ImagemPrincipalWrapper,
   ImagemPrincipal,
@@ -14,20 +15,23 @@ const NossaEquipe = () => {
   return (
     <SecaoNossaEquipe>
       <Conteudo>
-        <ColunaTexto>
-          <Titulo>Nossa equipe!</Titulo>
-          <Descricao>
-            Equipe de profissionais capacitados e especializados em todas as
-            etapas do processo construtivo, desde a concepção do projeto
-            arquitetônico até a entrega final das chaves.
-          </Descricao>
-        </ColunaTexto>
+        <Titulo>Nossa equipe!</Titulo>
 
-        <ColunaImagens>
-          <ImagemPrincipalWrapper>
-            <ImagemPrincipal />
-          </ImagemPrincipalWrapper>
-        </ColunaImagens>
+        <LinhaConteudo>
+          <ColunaTexto>
+            <Descricao>
+              Equipe de profissionais capacitados e especializados em todas as
+              etapas do processo construtivo, desde a concepção do projeto
+              arquitetônico até a entrega final das chaves.
+            </Descricao>
+          </ColunaTexto>
+
+          <ColunaImagens>
+            <ImagemPrincipalWrapper>
+              <ImagemPrincipal />
+            </ImagemPrincipalWrapper>
+          </ColunaImagens>
+        </LinhaConteudo>
       </Conteudo>
     </SecaoNossaEquipe>
   );

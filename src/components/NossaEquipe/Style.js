@@ -11,15 +11,22 @@ export const SecaoNossaEquipe = styled.section`
 export const Conteudo = styled.div`
   width: 90rem;
   max-width: 100%;
-  display: grid;
-  grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
-  column-gap: 4rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+  margin: 0 auto;
+`;
+
+export const LinhaConteudo = styled.div`
+  display: flex;
+  flex-direction: row;
   align-items: flex-start;
+  column-gap: 4rem;
 
   @media (max-width: 900px) {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     row-gap: 2.5rem;
-    justify-items: center;
+    align-items: center;
   }
 `;
 
@@ -39,6 +46,7 @@ export const Titulo = styled.h2`
   font-weight: 400;
   line-height: 102.327%;
   text-transform: uppercase;
+    text-align: center;
 
   @media (max-width: 768px) {
     font-size: 2.4rem;
@@ -56,6 +64,7 @@ export const Descricao = styled.p`
   font-weight: 400;
   line-height: 137.993%;
   //text-transform: uppercase;
+    text-align: right;
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -67,6 +76,7 @@ export const ColunaImagens = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+    width: 100%;
 
   @media (max-width: 768px) {
     align-items: center;
