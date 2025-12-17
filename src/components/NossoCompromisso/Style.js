@@ -17,7 +17,7 @@ export const Conteudo = styled.div`
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 
   @media (max-width: 900px) {
     width: 100%;
