@@ -8,14 +8,13 @@ const BannerWrapper = styled.div`
 `;
 
 const Filtro = styled.div`
-    background: rgba(0, 0, 0, 0.79);
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.66) 0%, #000 100%);
 `;
 
 const BannerConteudo = styled.div`
     color: #fff;
     text-align: center;
-     
-    text-transform: uppercase;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,11 +22,24 @@ const BannerConteudo = styled.div`
     h1 {
         padding-top: 4em;
         font-size: 4rem;
-         font-weight: 300;
+        font-weight: 300;
         margin: 0;
         max-width: 57rem;
         margin-left: auto;
         margin-right: auto;
+        text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.7rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 2.2rem;
+        }
     }
 `;
 
@@ -35,14 +47,24 @@ const TextoDescricao = styled.p`
     margin-top: 2rem;
     color: #d2d2d2;
     text-align: center;
-     
     font-size: 1.5rem;
-     font-weight: 300;
-    text-transform: uppercase;
+    font-weight: 300;
     max-width: 57rem;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 7rem;
+
+    @media (max-width: 768px) {
+        font-size: 1.1rem;
+        margin-bottom: 4rem;
+        padding: 0 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1rem;
+        margin-bottom: 3rem;
+        padding: 0 1rem;
+    }
 `;
 
 const SecaoCasas = styled.section`
@@ -52,6 +74,14 @@ const SecaoCasas = styled.section`
     justify-content: center;
     padding: 4rem 1rem 6rem 1rem;
     box-sizing: border-box;
+
+    @media (max-width: 768px) {
+        padding: 3rem 1rem 4rem 1rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 2.5rem 1rem 3.5rem 1rem;
+    }
 `;
 
 const ConteudoCasas = styled.div`
@@ -60,6 +90,14 @@ const ConteudoCasas = styled.div`
     display: flex;
     flex-direction: column;
     gap: 4rem;
+
+    @media (max-width: 768px) {
+        gap: 3rem;
+    }
+
+    @media (max-width: 480px) {
+        gap: 2.5rem;
+    }
 `;
 
 const CardCasa = styled.div`
@@ -69,49 +107,72 @@ const CardCasa = styled.div`
     align-items: flex-start;
     position: relative;
 
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
         grid-template-columns: 1fr;
         row-gap: 3rem;
+        column-gap: 2.5rem;
+    }
+
+    @media (max-width: 480px) {
+        column-gap: 2rem;
     }
 `;
 
 const ColunaInfo = styled.div`
     display: flex;
     flex-direction: column;
-`;
 
-const ColunaGaleria = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
+    @media (max-width: 768px) {
+        align-items: center;
+        text-align: center;
+    }
 `;
 
 const TituloCasa = styled.h2`
     margin: 0;
     color: #bdad77;
-     
     font-size: 4rem;
-     font-weight: 300;
+    font-weight: 300;
     line-height: 102.327%;
     text-transform: uppercase;
+
+    @media (max-width: 768px) {
+        font-size: 2.7rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 2.1rem;
+    }
 `;
 
 const DescricaoCasa = styled.p`
     margin: 2.88rem 0 2.88rem 0;
     color: #fff;
-     
     font-size: 1.25rem;
-     font-weight: 300;
+    font-weight: 300;
     line-height: 102.327%;
     max-width: 25.375rem;
+
+    @media (max-width: 900px) {
+        max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1.05rem;
+        margin: 2rem 0 2rem 0;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 0.95rem;
+        margin: 1.75rem 0 1.75rem 0;
+    }
 `;
 
 const BotaoVerFotos = styled.button`
     color: #fff;
     text-align: center;
-     
     font-size: 1rem;
-     font-weight: 300;
+    font-weight: 300;
     text-transform: uppercase;
     width: 14rem;
     height: 2.875rem;
@@ -119,13 +180,29 @@ const BotaoVerFotos = styled.button`
     background: linear-gradient(180deg, #bdad77 0%, #575037 100%);
     border: none;
     cursor: pointer;
+    
+    @media (max-width: 480px) {
+        width: 100%;
+    }
 `;
 
-const FotoThumb = styled.div`
-    width: 12.46938rem;
-    height: 11.10825rem;
+const ColunaGaleria = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
+`;
+
+const FotoThumb = styled.button`
+    width: calc(33.333% - 0.54rem);
     aspect-ratio: 199.51 / 177.73;
     background: ${({imagem}) => `url(${imagem}) lightgray center / cover no-repeat`};
+    border: none;
+    padding: 0;
+    border-radius: 0.75rem;
     cursor: pointer;
 
     @media (max-width: 600px) {
