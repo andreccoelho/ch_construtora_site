@@ -17,7 +17,7 @@ const Filtro = styled.div`
 const BannerConteudo = styled.div`
   color: #fff;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@ const BannerConteudo = styled.div`
   h1 {
     padding-top: 4em;
     font-size: 4rem;
-    font-weight: 400;
+     font-weight: 300;
     margin: 0;
     max-width: 57rem;
     margin-left: auto;
@@ -38,9 +38,9 @@ const TextoDescricao = styled.p`
   margin-top: 2rem;
   color: #d2d2d2;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
-  font-weight: 400;
+   font-weight: 300;
   text-transform: uppercase;
   max-width: 57rem;
   margin-left: auto;

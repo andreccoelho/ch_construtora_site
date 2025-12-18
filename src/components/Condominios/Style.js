@@ -13,9 +13,9 @@ export const TituloSecao = styled.h2`
   margin: 0 0 6.5rem 0;
   color: #fff;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   font-size: 3rem;
-  font-weight: 400;
+   font-weight: 300;
   text-transform: uppercase;
 `;
 
@@ -76,9 +76,9 @@ export const NomeCondominio = styled.h3`
   margin: 0;
   color: #bdad77;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   font-size: 2.25rem;
-  font-weight: 400;
+   font-weight: 300;
   text-transform: uppercase;
 `;
 
@@ -91,9 +91,9 @@ export const ColunaDireita = styled.div`
 export const DescricaoCondominio = styled.p`
   margin: 0 0 2rem 0;
   color: #fff;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.25rem;
-  font-weight: 400;
+   font-weight: 300;
 `;
 
 export const BotaoVejaCasas = styled.button`
@@ -102,9 +102,9 @@ export const BotaoVejaCasas = styled.button`
   border-radius: 0.9375rem;
   background: linear-gradient(180deg, #bdad77 0%, #575037 100%);
   color: #fff;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1rem;
-  font-weight: 400;
+   font-weight: 300;
   text-transform: uppercase;
   border: none;
   cursor: pointer;

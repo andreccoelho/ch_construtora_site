@@ -25,10 +25,8 @@ const Top = styled.header`
 
   a {
     color: #fff;
-    font-family: Alata;
     font-size: 1.2rem;
     font-style: normal;
-    font-weight: 200;
     line-height: normal;
     text-decoration: none;
 

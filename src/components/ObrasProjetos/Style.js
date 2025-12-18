@@ -32,7 +32,7 @@ export const Coluna = styled.div`
   flex-direction: column;
   align-items: center;
   color: #fff;
-  font-family: "Alata", sans-serif;
+   
   //text-transform: uppercase;
 `;
 
@@ -55,10 +55,10 @@ export const IconeWrapper = styled.div`
 export const TituloColuna = styled.h2`
   color: #fff;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   font-size: 2.25rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
   margin: 0;
@@ -71,14 +71,13 @@ export const TituloColuna = styled.h2`
 export const DescricaoColuna = styled.p`
   margin-top: 1.19rem;
   color: #fff;
-  font-family: "Alata", sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   //text-transform: uppercase;
   text-align: center;
   max-width: 25rem;
+    font-weight: 300;
+    font-size: 1.25rem;
+    font-style: normal;
+    line-height: normal;  
 
   @media (max-width: 768px) {
     font-size: 0.9rem;
@@ -89,10 +88,10 @@ export const BotaoSaibaMais = styled.button`
   margin-top: 3.19rem;
   color: #fff;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   text-transform: uppercase;
   border-radius: 0.625rem;

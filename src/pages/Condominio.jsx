@@ -14,7 +14,7 @@ const Filtro = styled.div`
 const BannerConteudo = styled.div`
     color: #fff;
     text-align: center;
-    font-family: "Alata", sans-serif;
+     
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@ const BannerConteudo = styled.div`
     h1 {
         padding-top: 4em;
         font-size: 4rem;
-        font-weight: 400;
+         font-weight: 300;
         margin: 0;
         max-width: 57rem;
         margin-left: auto;
@@ -35,9 +35,9 @@ const TextoDescricao = styled.p`
     margin-top: 2rem;
     color: #d2d2d2;
     text-align: center;
-    font-family: "Alata", sans-serif;
+     
     font-size: 1.5rem;
-    font-weight: 400;
+     font-weight: 300;
     text-transform: uppercase;
     max-width: 57rem;
     margin-left: auto;
@@ -89,9 +89,9 @@ const ColunaGaleria = styled.div`
 const TituloCasa = styled.h2`
     margin: 0;
     color: #bdad77;
-    font-family: "Alata", sans-serif;
+     
     font-size: 4rem;
-    font-weight: 400;
+     font-weight: 300;
     line-height: 102.327%;
     text-transform: uppercase;
 `;
@@ -99,9 +99,9 @@ const TituloCasa = styled.h2`
 const DescricaoCasa = styled.p`
     margin: 2.88rem 0 2.88rem 0;
     color: #fff;
-    font-family: "Alata", sans-serif;
+     
     font-size: 1.25rem;
-    font-weight: 400;
+     font-weight: 300;
     line-height: 102.327%;
     max-width: 25.375rem;
 `;
@@ -109,9 +109,9 @@ const DescricaoCasa = styled.p`
 const BotaoVerFotos = styled.button`
     color: #fff;
     text-align: center;
-    font-family: "Alata", sans-serif;
+     
     font-size: 1rem;
-    font-weight: 400;
+     font-weight: 300;
     text-transform: uppercase;
     width: 14rem;
     height: 2.875rem;

@@ -35,7 +35,6 @@ export const ColunaImagem = styled.div`
 export const ImagemWrapper = styled.div`
   width: 100%;
   max-width: 100%;
-  border-radius: 0.625rem;
   overflow: hidden;
     
     @media screen and (max-width: 768px) {
@@ -45,14 +44,14 @@ export const ImagemWrapper = styled.div`
 
 export const Imagem = styled.img`
   display: block;
-  width: 100%;
+  max-width: 33.125rem;
   height: auto;
   object-fit: cover;
 `;
 
 export const ColunaTexto = styled.div`
   color: #fff;
-  font-family: "Alata", sans-serif;
+   
   max-width: 32rem;
 
   @media (max-width: 768px) {
@@ -62,15 +61,16 @@ export const ColunaTexto = styled.div`
 
 export const Titulo = styled.h2`
   margin: 0;
-  color: #fff;
-  font-family: "Alata", sans-serif;
+  color: #BDAD77;
+  width: 37.1875rem;
   font-size: 2.25rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
 
-  @media (max-width: 768px) {
+  @media (max-width: 768px) {  
+      width: auto;
     text-align: center;
     font-size: 2rem;
   }
@@ -81,11 +81,11 @@ export const Descricao = styled.p`
   margin-bottom: 0;
   max-width: 32rem;
   color: #fff;
-  font-family: "Alata", sans-serif;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.5;
+   font-weight: 300;
+    text-align: left;
+    font-size: 1.25rem;
+    font-style: normal;
+    line-height: normal;
 
   @media (max-width: 768px) {
     margin-top: 1.5rem;
@@ -138,10 +138,10 @@ export const IconeWrapper = styled.div`
 
 export const TextoRetangulo = styled.span`
   color: #fff;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   text-transform: uppercase;
 `;
@@ -150,10 +150,10 @@ export const BotaoConhecaMais = styled.button`
   margin-top: 3.25rem; /* minisseção → botão */
   color: #fff;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   text-transform: uppercase;
   border-radius: 0.625rem;

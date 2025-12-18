@@ -12,7 +12,7 @@ export const SecaoPorQueEscolher = styled.section`
   background-blend-mode: multiply, normal;
   min-height: 36.875rem;
   padding: 4rem 1rem 8.88rem 1rem;
-  font-family: "Alata", sans-serif;
+   
   //text-transform: uppercase;
   box-sizing: border-box;
 `;
@@ -31,7 +31,7 @@ export const TituloPrincipal = styled.h2`
   color: #bdad77;
   font-size: 3rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   text-align: center;
 `;
@@ -73,7 +73,7 @@ export const CardHeader = styled.div`
   margin-bottom: 0.5rem;
   font-size: 2.25rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   text-transform: uppercase;
 `;
@@ -92,7 +92,7 @@ export const CardDescricao = styled.p`
   color: #ffffff;
   font-size: 1rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   //text-transform: uppercase;
 `;

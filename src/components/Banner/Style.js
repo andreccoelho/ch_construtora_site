@@ -11,20 +11,20 @@ const Filtro = styled.div`
 const BannerTexto = styled.div`
     color: #FFF;
     text-align: center;
-    font-family: "Alata", sans-serif;
+     
     display: flex;
     flex-direction: column;
     align-items: center;
 
     h1 {
-        padding-top: 10rem;
+        padding-top: 15rem;
         text-transform: uppercase;
         font-size: 4rem;
         font-style: normal;
-        font-weight: 400;
+        font-weight: 300;
         line-height: normal;
         margin: 0;
-        max-width: 57rem;
+        max-width: 65rem;
         margin-left: auto;
         margin-right: auto;
         padding-left: 1rem;
@@ -42,10 +42,10 @@ const BannerTexto = styled.div`
 
 const PalavraDestaque = styled.span`
     color: #BDAD77;
-    font-family: "Alata", sans-serif;
+     
     font-size: 4rem;
     font-style: normal;
-    font-weight: 400;
+     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
 
@@ -58,13 +58,12 @@ const TextoSecundario = styled.p`
     margin-top: 2rem;
     color: #D2D2D2;
     text-align: center;
-    font-family: "Alata", sans-serif;
+     
     font-size: 1.5rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 300;
     line-height: normal;
     //text-transform: uppercase;
-    max-width: 40rem;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1.5rem;
@@ -87,7 +86,7 @@ const BotaoContato = styled.button`
     font-family: Alata;
     font-size: 1rem;
     font-style: normal;
-    font-weight: 400;
+     font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
     border: none;
@@ -117,10 +116,10 @@ const TextoRole = styled.p`
     margin-top: 1.5rem;
     color: #BDAD77;
     text-align: center;
-    font-family: "Alata", sans-serif;
+     
     font-size: 1rem;
     font-style: normal;
-    font-weight: 400;
+     font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
     padding-bottom: 7rem;

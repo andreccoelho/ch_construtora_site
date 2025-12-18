@@ -18,10 +18,10 @@ export const TextoDivisor = styled.p`
   margin: 0;
   color: #bdad77;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   text-transform: uppercase;
 
@@ -77,10 +77,10 @@ export const ColunaEsquerda = styled.div`
 export const TituloContato = styled.h2`
   margin: 0 0 2.5rem 0;
   color: #bdad77;
-  font-family: "Alata", sans-serif;
+   
   font-size: 3rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   text-transform: uppercase;
 `;
@@ -88,7 +88,7 @@ export const TituloContato = styled.h2`
 export const LinhaEnderecoDestaque = styled.p`
   margin: 0 0 0.5rem 0;
   color: #decb8d;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
   text-transform: uppercase;
 `;
@@ -96,7 +96,7 @@ export const LinhaEnderecoDestaque = styled.p`
 export const LinhaEndereco = styled.p`
   margin: 0;
   color: #d2d2d2;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
   text-transform: uppercase;
 
@@ -112,7 +112,7 @@ export const BlocoEndereco = styled.div`
 export const TituloHorario = styled.p`
   margin: 0 0 0.5rem 0;
   color: #decb8d;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
   text-transform: uppercase;
 `;
@@ -120,7 +120,7 @@ export const TituloHorario = styled.p`
 export const TextoHorario = styled.p`
   margin: 0;
   color: #d2d2d2;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
   text-transform: uppercase;
 
@@ -137,10 +137,10 @@ export const BlocoHorario = styled.div`
 export const BotaoOrcamento = styled.button`
   color: #fff;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   text-transform: uppercase;
   border-radius: 0.625rem;
@@ -161,7 +161,7 @@ export const CampoInput = styled.input`
   padding: 1rem 1.5rem;
   background: #141414;
   color: rgba(255, 255, 255, 0.8);
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
   border: none;
   outline: none;
@@ -180,7 +180,7 @@ export const CampoTextarea = styled.textarea`
   padding: 1rem 1.5rem;
   background: #141414;
   color: rgba(255, 255, 255, 0.8);
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
   border: none;
   outline: none;
@@ -201,10 +201,10 @@ export const CampoTextarea = styled.textarea`
 export const BotaoEnviar = styled.button`
   color: #fff;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   text-transform: uppercase;
   border-radius: 0.625rem;

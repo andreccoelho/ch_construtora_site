@@ -38,10 +38,10 @@ export const TituloSecao = styled.h2`
     margin: 0 0 3rem 0;
     color: #bdad77;
     text-align: center;
-    font-family: "Alata", sans-serif;
+     
     font-size: 4rem;
     font-style: normal;
-    font-weight: 400;
+     font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
 
@@ -101,10 +101,10 @@ export const TituloProjeto = styled.h3`
     margin: 0;
     color: #bdad77;
     text-align: center;
-    font-family: "Alata", sans-serif;
+     
     font-size: 2rem;
     font-style: normal;
-    font-weight: 400;
+     font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
 `;
@@ -113,10 +113,10 @@ export const DescricaoProjeto = styled.p`
     margin: 0;
     color: #fff;
     text-align: right;
-    font-family: "Alata", sans-serif;
+     
     font-size: 1.25rem;
     font-style: normal;
-    font-weight: 400;
+     font-weight: 300;
     line-height: normal;
     //text-transform: uppercase;
     
@@ -138,10 +138,10 @@ export const BotaoVerProjetos = styled.button`
     margin-top: 4rem;
     color: #fff;
     text-align: center;
-    font-family: "Alata", sans-serif;
+     
     font-size: 1rem;
     font-style: normal;
-    font-weight: 400;
+     font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
     border-radius: 0.625rem;

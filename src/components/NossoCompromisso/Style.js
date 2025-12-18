@@ -29,10 +29,10 @@ export const Conteudo = styled.div`
 export const Titulo = styled.h2`
   margin: 0 0 1.5rem 0;
   color: #bdad77;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: 102.327%;
   text-transform: uppercase;
 `;
@@ -40,10 +40,10 @@ export const Titulo = styled.h2`
 export const TextoCorpo = styled.p`
   margin: 0 0 1.5rem 0;
   color: #d2d2d2;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: normal;
   text-transform: initial;
   max-width: 75rem;

@@ -40,10 +40,10 @@ export const Titulo = styled.h2`
   color: #bdad77;
   leading-trim: both;
   text-edge: cap;
-  font-family: "Alata", sans-serif;
+   
   font-size: 4rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: 102.327%;
   text-transform: uppercase;
     text-align: center;
@@ -58,10 +58,10 @@ export const Descricao = styled.p`
   margin-top: 2rem;
   margin-bottom: 0;
   color: #d2d2d2;
-  font-family: "Alata", sans-serif;
+   
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: 137.993%;
   //text-transform: uppercase;
     text-align: right;

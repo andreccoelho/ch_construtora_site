@@ -46,9 +46,9 @@ export const LegalText = styled.p`
   margin: 0;
   color: #f5f5f5;
   text-align: center;
-  font-family: "Alata", sans-serif;
+   
   font-size: 0.875rem; /* ~14px */
   font-style: normal;
-  font-weight: 400;
+   font-weight: 300;
   line-height: 1.4;
 `;

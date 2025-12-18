@@ -74,7 +74,7 @@ const Header = () => {
             className={isObras ? "active" : ""}
             onClick={closeMenu}
           >
-            Obras
+            Projetos
           </Link>
           <Link
             to="/"
