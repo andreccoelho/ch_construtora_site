@@ -11,6 +11,7 @@ import {
   TituloProjeto,
   DescricaoProjeto,
   BotaoVerProjetos,
+  BotaoPrincipal,
   InfoAlan,
   InfoCarla,
   InfoAlessandra,
@@ -145,9 +146,9 @@ const NossosProjetos = () => {
         </Coluna>
       </ConteudoProjetos>
 
-      <BotaoVerProjetos onClick={() => navigate("/obras")}>
+      <BotaoPrincipal onClick={() => navigate("/obras")}>
         Veja todos os projetos
-      </BotaoVerProjetos>
+      </BotaoPrincipal>
     </SecaoNossosProjetos>
   );
 };

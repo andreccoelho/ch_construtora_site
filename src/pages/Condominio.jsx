@@ -180,7 +180,35 @@ const BotaoVerFotos = styled.button`
     background: linear-gradient(180deg, #bdad77 0%, #575037 100%);
     border: none;
     cursor: pointer;
-    
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s ease;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
+
+    &:active {
+        transform: translateY(0);
+        filter: brightness(0.95);
+    }
+
     @media (max-width: 480px) {
         width: 100%;
     }
@@ -204,6 +232,31 @@ const FotoThumb = styled.button`
     padding: 0;
     border-radius: 0.75rem;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(189, 173, 119, 0.3);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        z-index: 1;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
 
     @media (max-width: 600px) {
         width: calc(50% - 0.4rem);
@@ -269,6 +322,17 @@ const BotaoFechar = styled.button`
     height: 2.5rem;
     border-radius: 50%;
     cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+
+    &:hover {
+        background: rgba(189, 173, 119, 0.8);
+        transform: rotate(90deg) scale(1.1);
+    }
+
+    &:active {
+        transform: rotate(90deg) scale(0.95);
+    }
 `;
 
 const BotaoNavegar = styled.button`
@@ -283,6 +347,17 @@ const BotaoNavegar = styled.button`
     height: 3rem;
     border-radius: 50%;
     cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+
+    &:hover {
+        background: rgba(189, 173, 119, 0.8);
+        transform: translateY(-50%) scale(1.15);
+    }
+
+    &:active {
+        transform: translateY(-50%) scale(0.95);
+    }
 `;
 
 const BotaoAnterior = styled(BotaoNavegar)`
