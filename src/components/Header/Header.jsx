@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Top, MenuButton, MobileMenu, MobileMenuLinks, MobileBackdrop } from "./Style";
 
@@ -12,14 +12,23 @@ const Header = () => {
   const isContato = isHome && location.state && location.state.scrollToContact;
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <Top>
-      <Link to="/">
-        <img src="/imagens/logo.svg" alt="CH Construtora logo" />
-      </Link>
+    <Top $scrolled={scrolled}>
+      <img src="/imagens/logo.svg" alt="CH Construtora logo" className="logo" />
 
       <nav className="desktop-nav">
         <Link to="/" className={isHome && !isContato ? "active" : ""}>

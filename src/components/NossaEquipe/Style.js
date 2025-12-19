@@ -12,14 +12,14 @@ export const Conteudo = styled.div`
   width: 90rem;
   max-width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   row-gap: 2.5rem;
   margin: 0 auto;
 `;
 
 export const LinhaConteudo = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   column-gap: 4rem;
 
@@ -43,10 +43,10 @@ export const Titulo = styled.h2`
    
   font-size: 4rem;
   font-style: normal;
-   font-weight: 300;
+   font-weight: 400;
   line-height: 102.327%;
   text-transform: uppercase;
-    text-align: center;
+    text-align: left;
 
   @media (max-width: 768px) {
     font-size: 2.4rem;
@@ -58,13 +58,14 @@ export const Descricao = styled.p`
   margin-top: 2rem;
   margin-bottom: 0;
   color: #d2d2d2;
+  max-width: 34.75rem;  
    
   font-size: 1.5rem;
   font-style: normal;
    font-weight: 300;
   line-height: 137.993%;
   //text-transform: uppercase;
-    text-align: right;
+    text-align: left;
 
   @media (max-width: 768px) {
     font-size: 1rem;
@@ -77,6 +78,7 @@ export const ColunaImagens = styled.div`
   flex-direction: column;
   gap: 1.5rem;
     width: 100%;
+    align-items: flex-end;  
 
   @media (max-width: 768px) {
     align-items: center;

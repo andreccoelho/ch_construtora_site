@@ -30,9 +30,9 @@ export const Titulo = styled.h2`
   margin: 0 0 1.5rem 0;
   color: #bdad77;
    
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-style: normal;
-   font-weight: 300;
+   font-weight: 400;
   line-height: 102.327%;
   text-transform: uppercase;
 `;

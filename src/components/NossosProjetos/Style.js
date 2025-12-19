@@ -66,13 +66,11 @@ export const ImagemProjeto = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0.625rem;
 `;
 
 export const InfoCard = styled.div`
     position: absolute;
     background: #000;
-    border-radius: 0.625rem;
     padding: 1.5rem 2rem;
     display: flex;
     flex-direction: column;
@@ -135,13 +133,11 @@ export const IconeSetaWrapper = styled.div`
 `;
 
 export const BotaoVerProjetos = styled.button`
-    margin-top: 4rem;
     color: #fff;
     text-align: center;
-     
     font-size: 1rem;
     font-style: normal;
-     font-weight: 300;
+    font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
     border-radius: 0.625rem;
@@ -150,6 +146,34 @@ export const BotaoVerProjetos = styled.button`
     height: 2.875rem;
     border: none;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s ease;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
+
+    &:active {
+        transform: translateY(0);
+        filter: brightness(0.95);
+    }
 `;
 
 // Variantes de posicionamento para cada projeto
@@ -256,6 +280,51 @@ export const ImagemContainer = styled.div`
 
     @media (max-width: 900px) {
         overflow: hidden;
+    }
+`;
+
+export const BotaoPrincipal = styled.button`
+    margin-top: 4rem;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    border-radius: 0.625rem;
+    background: linear-gradient(180deg, #bdad77 0%, #575037 100%);
+    width: 20.8125rem;
+    height: 2.875rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s ease;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
+
+    &:active {
+        transform: translateY(0);
+        filter: brightness(0.95);
     }
 `;
 

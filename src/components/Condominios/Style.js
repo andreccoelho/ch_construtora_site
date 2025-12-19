@@ -144,7 +144,8 @@ export const DescricaoCondominio = styled.p`
 
 export const BotaoVejaCasas = styled.button`
     width: 100%;
-    height: 4.5625rem;
+    max-width: 20rem;
+    height: 3.5rem;
     border-radius: 0.9375rem;
     background: linear-gradient(180deg, #bdad77 0%, #575037 100%);
     color: #fff;
@@ -153,8 +154,37 @@ export const BotaoVejaCasas = styled.button`
     text-transform: uppercase;
     border: none;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.5s ease;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        filter: brightness(1.1);
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
+
+    &:active {
+        transform: translateY(0);
+        filter: brightness(0.95);
+    }
 
     @media (max-width: 600px) {
         width: 100%;
+        max-width: 100%;
     }
 `;

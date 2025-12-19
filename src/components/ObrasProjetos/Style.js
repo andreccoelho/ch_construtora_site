@@ -88,10 +88,9 @@ export const BotaoSaibaMais = styled.button`
   margin-top: 3.19rem;
   color: #fff;
   text-align: center;
-   
   font-size: 1rem;
   font-style: normal;
-   font-weight: 300;
+  font-weight: 300;
   line-height: normal;
   text-transform: uppercase;
   border-radius: 0.625rem;
@@ -100,4 +99,32 @@ export const BotaoSaibaMais = styled.button`
   height: 2.875rem;
   border: none;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+
+  &:active {
+    transform: translateY(0);
+    filter: brightness(0.95);
+  }
 `;
