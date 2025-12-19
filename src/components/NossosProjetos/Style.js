@@ -66,13 +66,11 @@ export const ImagemProjeto = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0.625rem;
 `;
 
 export const InfoCard = styled.div`
     position: absolute;
     background: #000;
-    border-radius: 0.625rem;
     padding: 1.5rem 2rem;
     display: flex;
     flex-direction: column;

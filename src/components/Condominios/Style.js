@@ -42,6 +42,7 @@ export const ListaCards = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10rem;
+    align-items: center;  
 
   @media (max-width: 768px) {
     gap: 5rem;
@@ -57,6 +58,7 @@ export const CardCondominio = styled.div`
   grid-template-columns: auto auto;
   column-gap: 2.37rem;
   align-items: flex-start;
+  max-width: 74.5625rem;  
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;

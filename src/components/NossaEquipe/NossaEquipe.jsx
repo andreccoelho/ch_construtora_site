@@ -15,23 +15,19 @@ const NossaEquipe = () => {
   return (
     <SecaoNossaEquipe>
       <Conteudo>
-        <Titulo>Nossa equipe!</Titulo>
-
         <LinhaConteudo>
+        <Titulo>Nossa equipe!</Titulo>
           <ColunaTexto>
             <Descricao>
-              Equipe de profissionais capacitados e especializados em todas as
-              etapas do processo construtivo, desde a concepção do projeto
-              arquitetônico até a entrega final das chaves.
+              Nossa equipe é formada por profissionais altamente capacitados e especializados em todas as etapas do processo construtivo. Da concepção do projeto arquitetônico até a entrega final das chaves, acompanhamos cada detalhe com dedicação e profissionalismo.
             </Descricao>
           </ColunaTexto>
-
-          <ColunaImagens>
-            <ImagemPrincipalWrapper>
-              <ImagemPrincipal />
-            </ImagemPrincipalWrapper>
-          </ColunaImagens>
         </LinhaConteudo>
+        <ColunaImagens>
+          <ImagemPrincipalWrapper>
+            <ImagemPrincipal />
+          </ImagemPrincipalWrapper>
+        </ColunaImagens>
       </Conteudo>
     </SecaoNossaEquipe>
   );

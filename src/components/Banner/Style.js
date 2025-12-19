@@ -58,7 +58,7 @@ const TextoSecundario = styled.p`
     margin-top: 2rem;
     color: #D2D2D2;
     text-align: center;
-     
+    max-width: 64rem;
     font-size: 1.5rem;
     font-style: normal;
     font-weight: 300;
@@ -83,7 +83,6 @@ const BotaoContato = styled.button`
     border-radius: 0.9375rem;
     background: linear-gradient(180deg, #BDAD77 0%, #575037 100%);
     color: #FFF;
-    font-family: Alata;
     font-size: 1rem;
     font-style: normal;
      font-weight: 300;
