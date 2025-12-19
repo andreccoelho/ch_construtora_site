@@ -192,8 +192,9 @@ const ConhecaCHConstrutora = () => {
               <TextoRetangulo>Projetos personalizados</TextoRetangulo>
             </Retangulo>
           </MiniSecao>
-
-          <BotaoConhecaMais>Conheça mais</BotaoConhecaMais>
+          <BotaoConhecaMais>
+            <button>Conheça mais</button>
+          </BotaoConhecaMais>
         </ColunaTexto>
       </Conteudo>
     </SecaoConheca>

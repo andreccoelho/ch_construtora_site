@@ -8,10 +8,11 @@ const Top = styled.header`
   right: 0;
   display: flex;
   flex-direction: row;
-  margin: 0;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: center;
   z-index: 20;
+  max-width: 1300px;
 
   img {
     height: 3.5em;

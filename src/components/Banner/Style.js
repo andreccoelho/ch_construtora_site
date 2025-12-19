@@ -68,6 +68,7 @@ const TextoSecundario = styled.p`
     margin-right: auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    max-width: 1300px;
 
     @media (max-width: 768px) {
         font-size: 0.95rem;
