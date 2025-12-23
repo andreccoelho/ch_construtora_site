@@ -22,7 +22,7 @@ const Footer = () => {
         <BottomSection>
           <SocialIconsRow>
             <SocialLink
-              href="https://wa.me/5521999999999"
+              href="https://api.whatsapp.com/send?phone=21970380708"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -44,7 +44,7 @@ const Footer = () => {
             </SocialLink>
 
             <SocialLink
-              href="mailto:contato@chconstrutora.com.br"
+              href="mailto:https://construtorach.construtora@gmail.com"
               aria-label="Email"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -62,7 +62,7 @@ const Footer = () => {
             </SocialLink>
 
             <SocialLink
-              href="https://instagram.com/chconstrutora"
+              href="https://www.instagram.com/construtora_ch/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -89,7 +89,7 @@ const Footer = () => {
             </SocialLink>
 
             <SocialLink
-              href="https://maps.google.com/?q=Recreio+dos+Bandeirantes+Rio+de+Janeiro"
+              href="https://maps.app.goo.gl/F19BVkVcb3Ui9cfV8"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Localização"
@@ -112,7 +112,7 @@ const Footer = () => {
           </SocialIconsRow>
 
           <LegalText>
-            Copyright © 2025 CH Construtora | CNPJ XX.XXX.XXX/0001-XX | Todos os direitos reservados
+            Copyright © 2025 CH CONSTRUTORA LTDA | CNPJ 29.686.496/0001-80 | Todos os direitos reservados
           </LegalText>
         </BottomSection>
       </FooterContent>
