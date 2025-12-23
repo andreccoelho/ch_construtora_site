@@ -9,6 +9,7 @@ import Atletas from "./pages/Atletas";
 import Sobre from "./pages/Sobre";
 import Obras from "./pages/Obras";
 import Condominio from "./pages/Condominio";
+import ScrollToTop from "./components/ScrollToTop";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -16,6 +17,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/fotos" element={<Fotos />} />

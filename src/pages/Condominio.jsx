@@ -319,13 +319,30 @@ const SeloAVendaWrapper = styled.div`
 `;
 
 const SeloAVenda = styled.div`
-    width: 21.125rem;
-    height: 16.5rem;
-    aspect-ratio: 169 / 132;
-    background: url("/imagens/selo.png") center / cover no-repeat;
+    width: 16rem;
+    height: 16rem;
+    background: url("/imagens/selo.png") center / contain no-repeat;
     position: absolute;
-    right: 0;
-  bottom: 0;
+    right: -2rem;
+    bottom: -2rem;
+    z-index: 10;
+    pointer-events: none;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    animation: ${fadeInScale} 0.6s ease-out 0.4s backwards;
+
+    @media (max-width: 768px) {
+        width: 12rem;
+        height: 12rem;
+        right: -1.5rem;
+        bottom: -1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        width: 9rem;
+        height: 9rem;
+        right: -1rem;
+        bottom: -1rem;
+    }
 `;
 
 const Separador = styled.div`
@@ -446,7 +463,7 @@ const CASAS_POR_CONDOMINIO = {
             titulo: "Lote 6",
             descricao:
                 "Residência de 3 pavimentos, projetada para oferecer conforto, funcionalidade e sofisticação. No térreo, conta com garagem, sala de estar, sala de jantar, lavabo, cozinha, lavanderia, uma suíte completa, além de área gourmet integrada à piscina. No primeiro pavimento, possui uma suíte máster com closet e varanda, além de duas suítes adicionais. No segundo pavimento, dispõe de área coberta com lavabo e área descoberta, ideal para lazer ao ar livre.",
-            aVenda: false,
+            aVenda: true,
             fotos: [
                 "/imagens/projetos/projeto-alanderson/Alan-SF-01.jpg",
                 "/imagens/projetos/projeto-alanderson/Alan-SF-02.jpg",
@@ -465,7 +482,7 @@ const CASAS_POR_CONDOMINIO = {
             titulo: "Lote 55",
             descricao:
                 "Casa de 4 pavimentos, com projeto moderno e ambientes amplos. Subsolo com garagem, lavabo, lavanderia e depósito. Térreo com living integrado, sala de estar com pé-direito duplo, sala de jantar, lavabo social, cozinha com área gourmet, piscina e lavabo externo. Primeiro pavimento com três suítes, duas com closet e varanda. Segundo pavimento com ambiente versátil com banheiro, varanda e área descoberta.",
-            aVenda: false,
+            aVenda: true,
             fotos: [
                 "/imagens/projetos/projeto-alessandra/A_1---Photo.jpg",
                 "/imagens/projetos/projeto-alessandra/A_2---Foto.jpg",
@@ -485,7 +502,7 @@ const CASAS_POR_CONDOMINIO = {
             titulo: "Lote 8",
             descricao:
                 "Residência de 3 pavimentos, com arquitetura contemporânea e layout funcional. Térreo com garagem, sala de estar com pé-direito duplo, sala de jantar, lavabo social, cozinha, despensa, lavanderia, área gourmet, piscina e banheiro externo. Primeiro pavimento com três suítes com closet e varanda. Segundo pavimento com ambiente multifuncional com banheiro e área descoberta.",
-            aVenda: false,
+            aVenda: true,
             fotos: [
                 "/imagens/projetos/projeto-carla/FC_1---Photo.jpg",
                 "/imagens/projetos/projeto-carla/FC_2---Foto.jpg",
@@ -504,7 +521,7 @@ const CASAS_POR_CONDOMINIO = {
             titulo: "Lote 43",
             descricao:
                 "Residência de 4 pavimentos, com projeto sofisticado e foco em lazer e exclusividade. Subsolo com garagem, elevador e banheiro. Térreo com área gourmet, lavabo externo, sala de jantar, lavabo social, cozinha, piscina e uma suíte completa. Primeiro pavimento com três suítes, sendo uma com varanda. Segundo pavimento com suíte máster com closet, banheiro e área de spa com hidromassagem, além de varanda com espaço gourmet.",
-            aVenda: false,
+            aVenda: true,
             fotos: [
                 "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_1 - Photo.jpg",
                 "/imagens/projetos/Projeto Fabio e Raniele/Fachada/f_2 - Foto.jpg",
@@ -554,7 +571,7 @@ const CASAS_POR_CONDOMINIO = {
             titulo: "Lote 3",
             descricao:
                 "Casa de 3 pavimentos, com ambientes amplos e bem distribuídos. Térreo com garagem, sala de estar com pé-direito duplo, sala de jantar, lavabo social, cozinha, lavanderia, área gourmet, piscina e banheiro externo. Primeiro pavimento com três suítes, sendo uma suíte máster, todas com closet e varanda. Segundo pavimento com ambiente com banheiro que pode ser usado como quarto, sala de jogos ou cinema, além de área descoberta.",
-            aVenda: false,
+            aVenda: true,
             fotos: [
                 "/imagens/projetos/projeto-ch/VB_21.jpg",
                 "/imagens/projetos/projeto-ch/VB_26.jpg",
@@ -658,11 +675,6 @@ const Condominio = () => {
                                             <BotaoVerFotos type="button" onClick={() => abrirModal(casa.fotos, 0)}>
                                                 Ver fotos
                                             </BotaoVerFotos>
-                                            {casa.aVenda && (
-                                                <SeloAVendaWrapper>
-                                                    <SeloAVenda/>
-                                                </SeloAVendaWrapper>
-                                            )}
                                         </ColunaInfo>
                                         <ColunaGaleria>
                                             {thumbs.map((foto, index) => (
@@ -673,6 +685,7 @@ const Condominio = () => {
                                                 />
                                             ))}
                                         </ColunaGaleria>
+                                        {casa.aVenda && <SeloAVenda />}
                                     </CardCasa>
                                     <Separador/>
                                 </React.Fragment>

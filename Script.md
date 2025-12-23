@@ -1,3 +1,1 @@
-Claude vamos melhorar a página Home.jsx passando por cada sessão e otimizando o código para melhor desempenho e legibilidade.
-Gostaria que melhorasse um pouco o design, trazendo mais modernidade e clareza visual, adicionando efeitos de animações nos cards e nas imagens de fundo do banner.
-Torne respnonsivo para dispositivos móveis, garantindo que todos os elementos se ajustem corretamente em diferentes tamanhos de tela.
+Me ajude a melhorar o Design da sessão NossosProjetos.jsx. DeTry ixe ele moderno, resposivo e pode mudar o atual.
