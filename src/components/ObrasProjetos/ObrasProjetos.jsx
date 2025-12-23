@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import { SecaoObrasProjetos, ConteudoColunas, Coluna, LinhaIconeTexto, IconeWrapper, TituloColuna, DescricaoColuna, BotaoSaibaMais } from "./Style";
 
 const IconeGuindaste = () => (
@@ -31,10 +32,34 @@ const IconeRoloPintura = () => (
 );
 
 const ObrasProjetos = (props) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <SecaoObrasProjetos {...props}>
+    <SecaoObrasProjetos {...props} ref={sectionRef}>
       <ConteudoColunas>
-        <Coluna>
+        <Coluna $isVisible={isVisible}>
           <LinhaIconeTexto>
             <IconeWrapper>
               <IconeGuindaste />
@@ -45,7 +70,7 @@ const ObrasProjetos = (props) => {
             Construção completa da fundação ao acabamento, executamos sua obra com qualidade e comprometimento.
           </DescricaoColuna>
         </Coluna>
-        <Coluna>
+        <Coluna $isVisible={isVisible}>
           <LinhaIconeTexto>
             <IconeWrapper>
               <IconeRoloPintura />
@@ -57,7 +82,7 @@ const ObrasProjetos = (props) => {
           </DescricaoColuna>
         </Coluna>
       </ConteudoColunas>
-      <BotaoSaibaMais>
+      <BotaoSaibaMais $isVisible={isVisible}>
         Saiba mais
       </BotaoSaibaMais>
     </SecaoObrasProjetos>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   SecaoNossosProjetos,
@@ -56,13 +56,36 @@ const IconeSeta = () => (
 
 const NossosProjetos = () => {
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <SecaoNossosProjetos>
-      <TituloSecao>Nossos Projetos</TituloSecao>
+    <SecaoNossosProjetos ref={sectionRef}>
+      <TituloSecao $isVisible={isVisible}>Nossos Projetos</TituloSecao>
       <ConteudoProjetos>
         <Coluna>
-          <CardProjeto>
+          <CardProjeto $isVisible={isVisible} $delay={0}>
             <ImagemContainer>
               <WrapperImagemAlan>
                 <ImagemProjeto
@@ -91,7 +114,7 @@ const NossosProjetos = () => {
         </Coluna>
 
         <Coluna>
-          <CardProjeto>
+          <CardProjeto $isVisible={isVisible} $delay={1}>
             <ImagemContainer>
               <WrapperImagemAlessandra>
                 <ImagemProjeto
@@ -118,7 +141,7 @@ const NossosProjetos = () => {
             </ImagemContainer>
           </CardProjeto>
 
-          <CardProjeto>
+          <CardProjeto $isVisible={isVisible} $delay={2}>
             <ImagemContainer>
               <WrapperImagemFabio>
                 <ImagemProjeto
@@ -146,7 +169,7 @@ const NossosProjetos = () => {
         </Coluna>
       </ConteudoProjetos>
 
-      <BotaoPrincipal onClick={() => navigate("/obras")}>
+      <BotaoPrincipal $isVisible={isVisible} onClick={() => navigate("/obras")}>
         Veja todos os projetos
       </BotaoPrincipal>
     </SecaoNossosProjetos>

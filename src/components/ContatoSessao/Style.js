@@ -145,6 +145,7 @@ export const BotaoOrcamento = styled.button`
   border-radius: 0.625rem;
   background: linear-gradient(180deg, #bdad77 0%, #575037 100%);
   width: 20.8125rem;
+  max-width: 90%;
   height: 2.875rem;
   border: none;
   cursor: pointer;
@@ -175,6 +176,11 @@ export const BotaoOrcamento = styled.button`
   &:active {
     transform: translateY(0);
     filter: brightness(0.95);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    width: 18rem;
   }
 `;
 
@@ -236,6 +242,7 @@ export const BotaoEnviar = styled.button`
   border-radius: 0.625rem;
   background: linear-gradient(180deg, #bdad77 0%, #575037 100%);
   width: 20.8125rem;
+  max-width: 100%;
   height: 2.875rem;
   border: none;
   cursor: pointer;
@@ -266,5 +273,10 @@ export const BotaoEnviar = styled.button`
   &:active {
     transform: translateY(0);
     filter: brightness(0.95);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    width: 18rem;
   }
 `;

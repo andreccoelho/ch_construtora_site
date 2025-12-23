@@ -1,4 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 export const SecaoObrasProjetos = styled.section`
   background: #141414;
@@ -32,8 +43,16 @@ export const Coluna = styled.div`
   flex-direction: column;
   align-items: center;
   color: #fff;
-   
-  //text-transform: uppercase;
+  opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+  animation: ${({ $isVisible }) => $isVisible ? fadeInUp : 'none'} 0.8s ease-out forwards;
+
+  &:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.3s;
+  }
 `;
 
 export const LinhaIconeTexto = styled.div`
@@ -96,12 +115,15 @@ export const BotaoSaibaMais = styled.button`
   border-radius: 0.625rem;
   background: linear-gradient(180deg, #BDAD77 0%, #575037 100%);
   width: 20.8125rem;
+  max-width: 90%;
   height: 2.875rem;
   border: none;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+  animation: ${({ $isVisible }) => $isVisible ? fadeInUp : 'none'} 0.8s ease-out 0.5s forwards;
 
   &::before {
     content: '';
@@ -126,5 +148,10 @@ export const BotaoSaibaMais = styled.button`
   &:active {
     transform: translateY(0);
     filter: brightness(0.95);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    width: 18rem;
   }
 `;

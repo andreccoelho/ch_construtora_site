@@ -1,4 +1,26 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const zoomIn = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
 
 export const SecaoPorQueEscolher = styled.section`
   width: 100%;
@@ -12,8 +34,6 @@ export const SecaoPorQueEscolher = styled.section`
   background-blend-mode: multiply, normal;
   min-height: 36.875rem;
   padding: 4rem 1rem 8.88rem 1rem;
-   
-  //text-transform: uppercase;
   box-sizing: border-box;
 `;
 
@@ -31,9 +51,16 @@ export const TituloPrincipal = styled.h2`
   color: #bdad77;
   font-size: 3rem;
   font-style: normal;
-   font-weight: 300;
+  font-weight: 300;
   line-height: normal;
   text-align: center;
+  opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+  animation: ${({ $isVisible }) => $isVisible ? fadeInUp : 'none'} 1s ease-out forwards;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
 `;
 
 export const ContainerCards = styled.div`
@@ -59,10 +86,23 @@ export const Card = styled.div`
   justify-content: center;
   padding: 1rem;
   text-align: center;
+  opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+  animation: ${({ $isVisible }) => $isVisible ? zoomIn : 'none'} 0.8s ease-out ${({ $delay }) => 0.3 + $delay * 0.2}s forwards;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+    background-color: rgba(189, 173, 119, 0.1);
+    border-color: #FFE99D;
+  }
 
   @media (max-width: 768px) {
     width: 20rem;
     max-width: 90vw;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
   }
 `;
 

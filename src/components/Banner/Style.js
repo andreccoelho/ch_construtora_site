@@ -1,7 +1,34 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const BannerEstilizado = styled.div`
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.00) 0%, #FFF 100%), url(${"/imagens/fundo_predio.png"}) lightgray 50% / cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: subtleZoom 20s ease-in-out infinite alternate;
+
+    @keyframes subtleZoom {
+        0% {
+            background-size: 100%;
+        }
+        100% {
+            background-size: 105%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        animation: none;
+    }
 `
 
 const Filtro = styled.div`
@@ -11,7 +38,7 @@ const Filtro = styled.div`
 const BannerTexto = styled.div`
     color: #FFF;
     text-align: center;
-     
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,6 +56,7 @@ const BannerTexto = styled.div`
         margin-right: auto;
         padding-left: 1rem;
         padding-right: 1rem;
+        animation: ${fadeInUp} 1s ease-out;
     }
 
     @media (max-width: 768px) {
@@ -63,12 +91,12 @@ const TextoSecundario = styled.p`
     font-style: normal;
     font-weight: 300;
     line-height: normal;
-    //text-transform: uppercase;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     max-width: 1300px;
+    animation: ${fadeInUp} 1s ease-out 0.2s both;
 
     @media (max-width: 768px) {
         font-size: 0.95rem;
@@ -138,23 +166,19 @@ const BotaoScroll = styled.button`
     border: none;
     padding: 0;
     cursor: pointer;
-    transition: transform 0.3s ease;
-    animation: bounce 2s infinite;
+    opacity: 0;
+    animation: ${fadeInUp} 1s ease-out 0.4s forwards, bounce 2s ease-in-out 1.5s infinite;
 
     @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% {
+        0%, 100% {
             transform: translateY(0);
         }
-        40% {
+        50% {
             transform: translateY(-10px);
-        }
-        60% {
-            transform: translateY(-5px);
         }
     }
 
     &:hover {
-        animation: none;
         transform: scale(1.1);
     }
 
@@ -176,13 +200,13 @@ const TextoRole = styled.p`
     margin-top: 1.5rem;
     color: #BDAD77;
     text-align: center;
-     
     font-size: 1rem;
     font-style: normal;
-     font-weight: 300;
+    font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
     padding-bottom: 7rem;
+    animation: ${fadeInUp} 1s ease-out 0.6s both;
 `
 
 export {BannerEstilizado, Filtro, BannerTexto, PalavraDestaque, TextoSecundario, BotaoScroll, TextoRole, BotaoContato}

@@ -1,4 +1,26 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const zoomIn = keyframes`
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+`;
 
 export const SecaoNossosProjetos = styled.section`
     background: #141414;
@@ -38,12 +60,13 @@ export const TituloSecao = styled.h2`
     margin: 0 0 3rem 0;
     color: #bdad77;
     text-align: center;
-     
     font-size: 4rem;
     font-style: normal;
-     font-weight: 300;
+    font-weight: 300;
     line-height: normal;
     text-transform: uppercase;
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+    animation: ${({ $isVisible }) => $isVisible ? fadeInUp : 'none'} 1s ease-out forwards;
 
     @media (max-width: 900px) {
         text-align: center;
@@ -54,10 +77,21 @@ export const TituloSecao = styled.h2`
 export const CardProjeto = styled.div`
     position: relative;
     display: inline-block;
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+    animation: ${({ $isVisible }) => $isVisible ? zoomIn : 'none'} 0.8s ease-out ${({ $delay }) => 0.3 + $delay * 0.2}s forwards;
+    transition: transform 0.4s ease;
+
+    &:hover {
+        transform: scale(1.03);
+    }
 
     @media (max-width: 900px) {
         display: block;
         overflow: hidden;
+
+        &:hover {
+            transform: scale(1.01);
+        }
     }
 `;
 
@@ -143,6 +177,7 @@ export const BotaoVerProjetos = styled.button`
     border-radius: 0.625rem;
     background: linear-gradient(180deg, #bdad77 0%, #575037 100%);
     width: 20.8125rem;
+    max-width: 100%;
     height: 2.875rem;
     border: none;
     cursor: pointer;
@@ -173,6 +208,11 @@ export const BotaoVerProjetos = styled.button`
     &:active {
         transform: translateY(0);
         filter: brightness(0.95);
+    }
+
+    @media (max-width: 900px) {
+        font-size: 0.9rem;
+        width: 18rem;
     }
 `;
 
@@ -295,12 +335,15 @@ export const BotaoPrincipal = styled.button`
     border-radius: 0.625rem;
     background: linear-gradient(180deg, #bdad77 0%, #575037 100%);
     width: 20.8125rem;
+    max-width: 90%;
     height: 2.875rem;
     border: none;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     transition: all 0.3s ease;
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+    animation: ${({ $isVisible }) => $isVisible ? fadeInUp : 'none'} 0.8s ease-out 1s forwards;
 
     &::before {
         content: '';
@@ -325,6 +368,11 @@ export const BotaoPrincipal = styled.button`
     &:active {
         transform: translateY(0);
         filter: brightness(0.95);
+    }
+
+    @media (max-width: 900px) {
+        font-size: 0.9rem;
+        width: 18rem;
     }
 `;
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   SecaoCondominios,
@@ -16,12 +16,35 @@ import {
 
 const Condominios = () => {
   const navigate = useNavigate();
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <SecaoCondominios>
-      <TituloSecao>Condomínios</TituloSecao>
+    <SecaoCondominios ref={sectionRef}>
+      <TituloSecao $isVisible={isVisible}>Condomínios</TituloSecao>
       <ListaCards>
-        <CardCondominio>
+        <CardCondominio $isVisible={isVisible} $delay={0}>
           <ColunaEsquerda>
             <ImagemCondominio imagem="/imagens/vilablancaI.png" />
             <NomeCondominioWrapper>
@@ -46,7 +69,7 @@ const Condominios = () => {
           </ColunaDireita>
         </CardCondominio>
 
-        <CardCondominio>
+        <CardCondominio $isVisible={isVisible} $delay={1}>
           <ColunaEsquerda>
             <ImagemCondominio imagem="/imagens/vilablancaII.png" />
             <NomeCondominioWrapper>
@@ -72,7 +95,7 @@ const Condominios = () => {
           </ColunaDireita>
         </CardCondominio>
 
-        <CardCondominio>
+        <CardCondominio $isVisible={isVisible} $delay={2}>
           <ColunaEsquerda>
             <ImagemCondominio imagem="/imagens/sagradafamilia.png" />
             <NomeCondominioWrapper>

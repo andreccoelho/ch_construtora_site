@@ -1,11 +1,44 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const fadeInLeft = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const fadeInRight = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
 
 export const SecaoConheca = styled.section`
     background: url("/imagens/fundo 1.png") #1a1a1a -37.04px -182px / 105.144% 152.865% no-repeat;
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 3rem 1rem 4.75rem 1rem; /* bottom padding = distância botão → fim da seção */
+    padding: 3rem 1rem 4.75rem 1rem;
 `;
 
 export const Conteudo = styled.div`
@@ -13,7 +46,7 @@ export const Conteudo = styled.div`
     max-width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: 4rem; /* distância entre colunas (imagem ↔ texto) */
+    column-gap: 4rem;
     align-items: flex-start;
 
     @media (max-width: 768px) {
@@ -26,6 +59,8 @@ export const Conteudo = styled.div`
 export const ColunaImagem = styled.div`
     display: flex;
     justify-content: flex-start;
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+    animation: ${({ $isVisible }) => $isVisible ? fadeInLeft : 'none'} 1s ease-out forwards;
 
     @media (max-width: 768px) {
         justify-content: center;
@@ -68,6 +103,8 @@ export const Titulo = styled.h2`
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+    animation: ${({ $isVisible }) => $isVisible ? fadeInRight : 'none'} 1s ease-out 0.2s forwards;
 
     @media (max-width: 768px) {
         width: auto;
@@ -77,7 +114,7 @@ export const Titulo = styled.h2`
 `;
 
 export const Descricao = styled.p`
-    margin-top: 3.56rem; /* distância título → descrição */
+    margin-top: 3.56rem;
     margin-bottom: 0;
     max-width: 32rem;
     color: #fff;
@@ -86,6 +123,8 @@ export const Descricao = styled.p`
     font-size: 1.25rem;
     font-style: normal;
     line-height: normal;
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+    animation: ${({ $isVisible }) => $isVisible ? fadeInRight : 'none'} 1s ease-out 0.4s forwards;
 
     @media (max-width: 768px) {
         margin-top: 1.5rem;
@@ -115,6 +154,14 @@ export const Retangulo = styled.div`
     padding: 1.25rem 1.5rem;
     border-radius: 0.3125rem;
     border: 2px solid #bdad77;
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+    animation: ${({ $isVisible }) => $isVisible ? fadeInUp : 'none'} 0.8s ease-out ${({ $delay }) => 0.6 + $delay * 0.15}s forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(189, 173, 119, 0.3);
+    }
 
     @media (max-width: 768px) {
         justify-content: center;
@@ -152,9 +199,11 @@ export const BotaoConhecaMais = styled.button`
     width: 100%;
     justify-content: center;
     background: none;
-    
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+    animation: ${({ $isVisible }) => $isVisible ? fadeInUp : 'none'} 0.8s ease-out 1.2s forwards;
+
     button {
-        margin-top: 3.25rem; /* minisseção → botão */
+        margin-top: 3.25rem;
         color: #fff;
         text-align: center;
         font-size: 1rem;
@@ -165,6 +214,7 @@ export const BotaoConhecaMais = styled.button`
         border-radius: 0.625rem;
         background: linear-gradient(180deg, #bdad77 0%, #575037 100%);
         width: 20.8125rem;
+        max-width: 90%;
         height: 2.875rem;
         border: none;
         cursor: pointer;
@@ -195,6 +245,12 @@ export const BotaoConhecaMais = styled.button`
         &:active {
             transform: translateY(0);
             filter: brightness(0.95);
+        }
+
+        @media (max-width: 768px) {
+            font-size: 0.9rem;
+            width: 18rem;
+            margin-top: 2rem;
         }
     }
 `;

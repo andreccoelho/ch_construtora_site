@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import Base from "./Base";
 import Banner from "../components/Banner/Banner";
@@ -10,21 +10,20 @@ import ContatoSessao from "../components/ContatoSessao/ContatoSessao";
 const Home = () => {
   const location = useLocation();
 
-  const handleScrollDown = () => {
+  // Smooth scroll with easing animation to a specific element
+  const handleScrollDown = useCallback(() => {
     const target = document.getElementById("footer");
-
     if (!target) return;
 
     const startY = window.scrollY || window.pageYOffset;
     const targetY = target.getBoundingClientRect().top + startY;
     const distance = targetY - startY;
-    const duration = 12000; // duração do auto-scroll em ms (12s)
+    const duration = 12000;
 
     let startTime = null;
-
     const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
 
-    const step = (timestamp) => {
+    const animateScroll = (timestamp) => {
       if (!startTime) startTime = timestamp;
       const elapsed = timestamp - startTime;
       const progress = Math.min(elapsed / duration, 1);
@@ -33,22 +32,20 @@ const Home = () => {
       window.scrollTo(0, startY + distance * easedProgress);
 
       if (elapsed < duration) {
-        window.requestAnimationFrame(step);
+        window.requestAnimationFrame(animateScroll);
       }
     };
 
-    window.requestAnimationFrame(step);
-  };
+    window.requestAnimationFrame(animateScroll);
+  }, []);
 
+  // Handle navigation state for scrolling to contact section
   useEffect(() => {
-    if (location.state && location.state.scrollToContact) {
+    if (location.state?.scrollToContact) {
       const element = document.getElementById("contato");
-
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+      element?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  }, [location]);
+  }, [location.state]);
 
   return (
     <Base>

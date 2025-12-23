@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import {
   SecaoConheca,
   Conteudo,
@@ -143,10 +144,34 @@ const IconeQuadro = () => (
 );
 
 const ConhecaCHConstrutora = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <SecaoConheca>
+    <SecaoConheca ref={sectionRef}>
       <Conteudo>
-        <ColunaImagem>
+        <ColunaImagem $isVisible={isVisible}>
           <ImagemWrapper>
             <Imagem
               src="/imagens/conheca_ch.png"
@@ -156,43 +181,43 @@ const ConhecaCHConstrutora = () => {
         </ColunaImagem>
 
         <ColunaTexto>
-          <Titulo>Conheça a CH Construtora</Titulo>
-          <Descricao>
+          <Titulo $isVisible={isVisible}>Conheça a CH Construtora</Titulo>
+          <Descricao $isVisible={isVisible}>
             Desde 2018 no mercado, nós nos dedicamos a entregar projetos
             personalizados de alto padrão. Nossa missão é construir não apenas
             uma casa, mas o lar perfeito para você e sua família.
           </Descricao>
 
           <MiniSecao>
-            <Retangulo>
+            <Retangulo $isVisible={isVisible} $delay={0}>
               <IconeWrapper>
                 <IconeTrofeu />
               </IconeWrapper>
               <TextoRetangulo>+6 anos de experiência</TextoRetangulo>
             </Retangulo>
 
-            <Retangulo>
+            <Retangulo $isVisible={isVisible} $delay={1}>
               <IconeWrapper>
                 <IconePessoas />
               </IconeWrapper>
               <TextoRetangulo>Equipe especializada</TextoRetangulo>
             </Retangulo>
 
-            <Retangulo>
+            <Retangulo $isVisible={isVisible} $delay={2}>
               <IconeWrapper>
                 <IconeCheck />
               </IconeWrapper>
               <TextoRetangulo>Qualidade garantida</TextoRetangulo>
             </Retangulo>
 
-            <Retangulo>
+            <Retangulo $isVisible={isVisible} $delay={3}>
               <IconeWrapper>
                 <IconeQuadro />
               </IconeWrapper>
               <TextoRetangulo>Projetos personalizados</TextoRetangulo>
             </Retangulo>
           </MiniSecao>
-          <BotaoConhecaMais>
+          <BotaoConhecaMais $isVisible={isVisible}>
             <button>Conheça mais</button>
           </BotaoConhecaMais>
         </ColunaTexto>
