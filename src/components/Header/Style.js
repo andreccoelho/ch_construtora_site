@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Top = styled.header`
   padding: ${props => props.$scrolled ? '1em 7.5em' : '1.5em 7.5em'};
@@ -186,4 +187,197 @@ const MobileMenuLinks = styled.div`
   }
 `;
 
-export { Top, MenuButton, MobileMenu, MobileMenuLinks, MobileBackdrop };
+const DropdownWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
+const DropdownMenu = styled.div`
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(189, 173, 119, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.75rem 0;
+  min-width: 12rem;
+  opacity: ${props => props.$isOpen ? 1 : 0};
+  visibility: ${props => props.$isOpen ? 'visible' : 'hidden'};
+  transform: translateX(-50%) translateY(${props => props.$isOpen ? '0' : '-10px'});
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const DropdownItem = styled(Link)`
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: #fff !important;
+  font-size: 1rem !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  &::after {
+    display: none !important;
+  }
+
+  &:hover {
+    background: rgba(189, 173, 119, 0.15);
+    color: #bdad77 !important;
+    padding-left: 1.5rem;
+  }
+
+  &.divider {
+    border-top: 1px solid rgba(189, 173, 119, 0.2);
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+  }
+`;
+
+const MobileDropdownWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const MobileDropdownToggle = styled.button`
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.125rem;
+  text-align: left;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  transition: color 0.3s ease;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: slideIn 0.3s ease forwards;
+  animation-delay: 0.2s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #bdad77;
+    transition: width 0.3s ease, left 0.3s ease;
+  }
+
+  &.active {
+    color: #bdad77;
+
+    &::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &:hover {
+    color: #bdad77;
+
+    &::after {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  span {
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+    transform: ${props => props.$isOpen ? 'rotate(180deg)' : 'rotate(0)'};
+    margin-left: 0.5rem;
+    display: inline-block;
+  }
+
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+`;
+
+const MobileDropdownMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: ${props => props.$isOpen ? '0.75rem' : '0'};
+  padding: ${props => props.$isOpen ? '1rem' : '0 1rem'};
+  padding-left: 1.5rem;
+  background: ${props => props.$isOpen ? 'rgba(20, 20, 20, 0.5)' : 'transparent'};
+  border-left: 2px solid ${props => props.$isOpen ? 'rgba(189, 173, 119, 0.3)' : 'transparent'};
+  border-radius: 0 0.5rem 0.5rem 0;
+  max-height: ${props => props.$isOpen ? '500px' : '0'};
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  a {
+    font-size: 1rem !important;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    opacity: ${props => props.$isOpen ? 1 : 0};
+    transform: ${props => props.$isOpen ? 'translateX(0)' : 'translateX(-10px)'};
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.85) !important;
+    background: transparent;
+    position: relative;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #bdad77;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+      color: #bdad77 !important;
+      background: rgba(189, 173, 119, 0.1);
+      padding-left: 1.25rem;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &::after {
+      display: none !important;
+    }
+
+    &:nth-child(1) {
+      transition-delay: ${props => props.$isOpen ? '0.1s' : '0s'};
+    }
+
+    &:nth-child(2) {
+      transition-delay: ${props => props.$isOpen ? '0.15s' : '0s'};
+    }
+
+    &:nth-child(3) {
+      transition-delay: ${props => props.$isOpen ? '0.2s' : '0s'};
+    }
+
+    &:nth-child(4) {
+      transition-delay: ${props => props.$isOpen ? '0.25s' : '0s'};
+      margin-top: 0.25rem;
+      border-top: 1px solid rgba(189, 173, 119, 0.2);
+      padding-top: 0.75rem;
+    }
+  }
+`;
+
+export { Top, MenuButton, MobileMenu, MobileMenuLinks, MobileBackdrop, DropdownWrapper, DropdownMenu, DropdownItem, MobileDropdownWrapper, MobileDropdownToggle, MobileDropdownMenu };
