@@ -1,7 +1,18 @@
-import React, {useState} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import Base from "./Base";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import {useParams, Navigate} from "react-router-dom";
+
+const fadeInScale = keyframes`
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+`;
 
 const BannerWrapper = styled.div`
     background: ${({imagem}) => `linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, #fff 100%), url(${imagem}) lightgray 50% / cover no-repeat`};
@@ -106,15 +117,36 @@ const CardCasa = styled.div`
     column-gap: 4rem;
     align-items: flex-start;
     position: relative;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(189, 173, 119, 0.1);
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
+    animation: ${({ $isVisible }) => $isVisible ? fadeInScale : 'none'} 0.8s ease-out ${({ $delay }) => 0.2 + $delay * 0.3}s forwards;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(189, 173, 119, 0.15), 0 3px 10px rgba(0, 0, 0, 0.2);
+        border-color: rgba(189, 173, 119, 0.25);
+    }
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
         row-gap: 3rem;
         column-gap: 2.5rem;
+        padding: 2rem;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(189, 173, 119, 0.12), 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
     }
 
     @media (max-width: 480px) {
         column-gap: 2rem;
+        padding: 1.5rem;
     }
 `;
 
@@ -228,29 +260,46 @@ const FotoThumb = styled.button`
     width: calc(33.333% - 0.54rem);
     aspect-ratio: 199.51 / 177.73;
     background: ${({imagem}) => `url(${imagem}) lightgray center / cover no-repeat`};
-    border: none;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(189, 173, 119, 0.15);
     padding: 0;
     border-radius: 0.75rem;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 
     &::before {
         content: '';
         position: absolute;
         inset: 0;
-        background: rgba(189, 173, 119, 0.3);
+        background: linear-gradient(135deg, rgba(189, 173, 119, 0.4) 0%, rgba(189, 173, 119, 0.1) 100%);
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.4s ease;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 0.75rem;
+        box-shadow: inset 0 0 20px rgba(189, 173, 119, 0.3);
+        opacity: 0;
+        transition: opacity 0.4s ease;
     }
 
     &:hover {
-        transform: scale(1.05);
+        transform: scale(1.03);
+        border-color: rgba(189, 173, 119, 0.4);
         z-index: 1;
     }
 
     &:hover::before {
+        opacity: 1;
+    }
+
+    &:hover::after {
         opacity: 1;
     }
 
@@ -282,7 +331,8 @@ const SeloAVenda = styled.div`
 const Separador = styled.div`
     width: 100%;
     height: 1px;
-    background: linear-gradient(90deg, #bdad77 0%, #575037 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(189, 173, 119, 0.3) 50%, transparent 100%);
+    margin: 2rem 0;
 `;
 
 const ModalOverlay = styled.div`
@@ -393,7 +443,7 @@ const CASAS_POR_CONDOMINIO = {
     "sagrada-familia": [
         {
             id: "lote-6",
-            titulo: "Casa – Lote 6 (Quadra D)",
+            titulo: "Lote 6",
             descricao:
                 "Residência de 3 pavimentos, projetada para oferecer conforto, funcionalidade e sofisticação. No térreo, conta com garagem, sala de estar, sala de jantar, lavabo, cozinha, lavanderia, uma suíte completa, além de área gourmet integrada à piscina. No primeiro pavimento, possui uma suíte máster com closet e varanda, além de duas suítes adicionais. No segundo pavimento, dispõe de área coberta com lavabo e área descoberta, ideal para lazer ao ar livre.",
             aVenda: false,
@@ -412,7 +462,7 @@ const CASAS_POR_CONDOMINIO = {
     "villa-blanca-ii": [
         {
             id: "lote-55",
-            titulo: "Casa – Lote 55 (Alessandra)",
+            titulo: "Lote 55",
             descricao:
                 "Casa de 4 pavimentos, com projeto moderno e ambientes amplos. Subsolo com garagem, lavabo, lavanderia e depósito. Térreo com living integrado, sala de estar com pé-direito duplo, sala de jantar, lavabo social, cozinha com área gourmet, piscina e lavabo externo. Primeiro pavimento com três suítes, duas com closet e varanda. Segundo pavimento com ambiente versátil com banheiro, varanda e área descoberta.",
             aVenda: false,
@@ -432,7 +482,7 @@ const CASAS_POR_CONDOMINIO = {
         },
         {
             id: "lote-8",
-            titulo: "Casa – Lote 8 (Carla)",
+            titulo: "Lote 8",
             descricao:
                 "Residência de 3 pavimentos, com arquitetura contemporânea e layout funcional. Térreo com garagem, sala de estar com pé-direito duplo, sala de jantar, lavabo social, cozinha, despensa, lavanderia, área gourmet, piscina e banheiro externo. Primeiro pavimento com três suítes com closet e varanda. Segundo pavimento com ambiente multifuncional com banheiro e área descoberta.",
             aVenda: false,
@@ -451,7 +501,7 @@ const CASAS_POR_CONDOMINIO = {
     "villa-blanca-i": [
         {
             id: "lote-43",
-            titulo: "Casa – Lote 43 (Fábio e Raniele)",
+            titulo: "Lote 43",
             descricao:
                 "Residência de 4 pavimentos, com projeto sofisticado e foco em lazer e exclusividade. Subsolo com garagem, elevador e banheiro. Térreo com área gourmet, lavabo externo, sala de jantar, lavabo social, cozinha, piscina e uma suíte completa. Primeiro pavimento com três suítes, sendo uma com varanda. Segundo pavimento com suíte máster com closet, banheiro e área de spa com hidromassagem, além de varanda com espaço gourmet.",
             aVenda: false,
@@ -501,7 +551,7 @@ const CASAS_POR_CONDOMINIO = {
         },
         {
             id: "lote-3",
-            titulo: "Casa – Lote 3 (CH)",
+            titulo: "Lote 3",
             descricao:
                 "Casa de 3 pavimentos, com ambientes amplos e bem distribuídos. Térreo com garagem, sala de estar com pé-direito duplo, sala de jantar, lavabo social, cozinha, lavanderia, área gourmet, piscina e banheiro externo. Primeiro pavimento com três suítes, sendo uma suíte máster, todas com closet e varanda. Segundo pavimento com ambiente com banheiro que pode ser usado como quarto, sala de jogos ou cinema, além de área descoberta.",
             aVenda: false,
@@ -534,6 +584,29 @@ const Condominio = () => {
     const [modalAberto, setModalAberto] = useState(false);
     const [fotosModal, setFotosModal] = useState([]);
     const [indiceAtual, setIndiceAtual] = useState(0);
+    const [isVisible, setIsVisible] = useState(false);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
 
     if (!dados) {
         return <Navigate to="/obras" replace/>;
@@ -571,14 +644,14 @@ const Condominio = () => {
             </BannerWrapper>
 
             {casas.length > 0 && (
-                <SecaoCasas>
+                <SecaoCasas ref={sectionRef}>
                     <ConteudoCasas>
-                        {casas.map((casa) => {
+                        {casas.map((casa, index) => {
                             const thumbs = casa.fotos.slice(0, 6);
 
                             return (
                                 <React.Fragment key={casa.id}>
-                                    <CardCasa>
+                                    <CardCasa $isVisible={isVisible} $delay={index}>
                                         <ColunaInfo>
                                             <TituloCasa>{casa.titulo}</TituloCasa>
                                             <DescricaoCasa>{casa.descricao}</DescricaoCasa>
