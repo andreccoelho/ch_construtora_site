@@ -1,5 +1,6 @@
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import WhatsAppOverlay from "../components/WhatsAppOverlay/WhatsAppOverlay";
 
 const Base = (props) => (
   <>
@@ -8,6 +9,7 @@ const Base = (props) => (
       {props.children}
     </div>
     <Footer />
+    <WhatsAppOverlay />
   </>
 )
 

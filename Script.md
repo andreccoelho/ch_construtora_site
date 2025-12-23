@@ -1,1 +1,1 @@
-Me ajude a melhorar o Design da sessão NossosProjetos.jsx. DeTry ixe ele moderno, resposivo e pode mudar o atual.
+Adicione um overlay com logo do whatsapp com link direto em todas as paginas public/imagens/whatsapp-logo-2022.svg.
