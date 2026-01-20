@@ -45,4 +45,6 @@ build
 .env
 .env*
 
+public/imagens
+
 michel
