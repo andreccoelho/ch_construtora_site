@@ -1,1 +1,1 @@
-Adicione um overlay com logo do whatsapp com link direto em todas as paginas public/imagens/whatsapp-logo-2022.svg.
+Preciso que voce substitua do botões utilizados no projeto pelo botão que é utilizado no NossosProjetos.jsx (src/components/NossosProjetos/NossosProjetos.jsx) que é mais bonito.

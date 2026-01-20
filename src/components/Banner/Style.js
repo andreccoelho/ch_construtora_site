@@ -61,7 +61,7 @@ const BannerTexto = styled.div`
 
     @media (max-width: 768px) {
         h1 {
-            padding-top: 5.5rem;
+            padding-top: 6rem;
             font-size: 2.2rem;
             max-width: 24rem;
         }
@@ -101,27 +101,27 @@ const TextoSecundario = styled.p`
     @media (max-width: 768px) {
         font-size: 0.95rem;
         max-width: 22rem;
-        margin-top: 1.5rem;
+        margin-top: 1rem;
     }
 `
 
 const BotaoContato = styled.button`
     margin-top: 2.99rem;
-    width: 14rem;
-    height: 2.875rem;
-    border-radius: 0.9375rem;
-    background: linear-gradient(180deg, #BDAD77 0%, #575037 100%);
-    color: #FFF;
+    color: #fff;
+    text-align: center;
     font-size: 1rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
+    font-weight: 400;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    border-radius: 0.5rem;
+    background: linear-gradient(135deg, #bdad77 0%, #8a7d54 100%);
+    padding: 1rem 2.5rem;
     border: none;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(189, 173, 119, 0.2);
 
     &::before {
         content: '';
@@ -130,27 +130,46 @@ const BotaoContato = styled.button`
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        transition: left 0.5s ease;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+        transition: left 0.6s ease;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 0.5rem;
+        padding: 2px;
+        background: linear-gradient(135deg, #bdad77, #575037);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0;
+        transition: opacity 0.4s ease;
     }
 
     &:hover {
         transform: translateY(-2px);
-        filter: brightness(1.1);
+        box-shadow: 0 8px 25px rgba(189, 173, 119, 0.35);
     }
 
     &:hover::before {
         left: 100%;
     }
 
+    &:hover::after {
+        opacity: 1;
+    }
+
     &:active {
         transform: translateY(0);
-        filter: brightness(0.95);
     }
 
     @media (max-width: 768px) {
         margin-top: 2.5rem;
         margin-bottom: 4rem;
+        font-size: 0.875rem;
+        padding: 0.875rem 1.5rem;
     }
     margin-bottom: 7rem;
 `
@@ -194,6 +213,17 @@ const BotaoScroll = styled.button`
     &:hover img, &:hover svg {
         filter: drop-shadow(0 4px 12px rgba(189, 173, 119, 0.6));
     }
+
+    @media (max-width: 768px) {
+        margin-top: 2rem;
+        width: 3rem;
+        height: 3rem;
+
+        svg {
+            width: 48px;
+            height: 48px;
+        }
+    }
 `
 
 const TextoRole = styled.p`
@@ -207,6 +237,12 @@ const TextoRole = styled.p`
     text-transform: uppercase;
     padding-bottom: 7rem;
     animation: ${fadeInUp} 1s ease-out 0.6s both;
+
+    @media (max-width: 768px) {
+        margin-top: 0.75rem;
+        font-size: 0.875rem;
+        padding-bottom: 3rem;
+    }
 `
 
 export {BannerEstilizado, Filtro, BannerTexto, PalavraDestaque, TextoSecundario, BotaoScroll, TextoRole, BotaoContato}

@@ -85,36 +85,63 @@ const Top = styled.header`
 
 const MenuButton = styled.button`
   display: none;
-  background: transparent;
-  border: none;
-  padding: 0;
-  width: 2.5rem;
-  height: 2.5rem;
+  background: rgba(189, 173, 119, 0.1);
+  border: 1px solid rgba(189, 173, 119, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
   &:hover {
-    transform: scale(1.1);
+    transform: translateY(-2px);
+    background: rgba(189, 173, 119, 0.15);
+    border-color: rgba(189, 173, 119, 0.4);
+    box-shadow: 0 4px 12px rgba(189, 173, 119, 0.2);
   }
 
   &:active {
-    transform: scale(0.95);
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
 
   span {
     width: 100%;
-    height: 0.18rem;
+    height: 0.125rem;
     border-radius: 999px;
-    background: #ffffff;
-    transition: background 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(90deg, #ffffff 0%, #bdad77 100%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+    &:nth-child(1) {
+      width: 100%;
+    }
+
+    &:nth-child(2) {
+      width: 85%;
+    }
+
+    &:nth-child(3) {
+      width: 70%;
+    }
   }
 
   &:hover span {
-    background: #bdad77;
+    background: linear-gradient(90deg, #bdad77 0%, #FFE99D 100%);
+    box-shadow: 0 2px 4px rgba(189, 173, 119, 0.4);
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      width: 100%;
+    }
   }
 
   @media (max-width: 768px) {
