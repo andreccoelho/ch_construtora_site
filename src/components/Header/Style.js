@@ -195,10 +195,43 @@ const MobileMenuLinks = styled.div`
   gap: 1.5rem;
 
   a {
+    color: #fff;
     font-size: 1.125rem;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
     opacity: 0;
     transform: translateX(20px);
     animation: slideIn 0.3s ease forwards;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #bdad77;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    &.active {
+      color: #bdad77;
+
+      &::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+
+    &:hover {
+      color: #bdad77;
+
+      &::after {
+        width: 100%;
+        left: 0;
+      }
+    }
 
     &:nth-child(1) { animation-delay: 0.1s; }
     &:nth-child(2) { animation-delay: 0.15s; }
@@ -278,14 +311,17 @@ const MobileDropdownToggle = styled.button`
   background: transparent;
   border: none;
   color: #fff;
+  font-family: inherit;
   font-size: 1.125rem;
+  font-weight: 400;
+  line-height: normal;
   text-align: left;
   padding: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
+  gap: 0.5rem;
+  width: auto;
   position: relative;
   transition: color 0.3s ease;
   opacity: 0;

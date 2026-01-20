@@ -46,7 +46,13 @@ const ContatoSessao = () => {
               <TextoHorario>Segunda a sexta - 9H a 18H</TextoHorario>
             </BlocoHorario>
 
-            <BotaoOrcamento>Faça seu orçamento</BotaoOrcamento>
+            <BotaoOrcamento
+              href="https://api.whatsapp.com/send?phone=21970380708"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Faça seu orçamento
+            </BotaoOrcamento>
           </ColunaEsquerda>
 
           <ColunaDireita>

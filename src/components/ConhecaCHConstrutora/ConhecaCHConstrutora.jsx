@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   SecaoConheca,
   Conteudo,
@@ -244,7 +245,7 @@ const ConhecaCHConstrutora = () => {
             </Retangulo>
           </MiniSecao>
           <BotaoConhecaMais $isVisible={isVisible}>
-            <button>Conheça mais</button>
+            <Link to="/sobre">Conheça mais</Link>
           </BotaoConhecaMais>
         </ColunaTexto>
       </Conteudo>

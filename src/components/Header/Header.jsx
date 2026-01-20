@@ -32,57 +32,59 @@ const Header = () => {
   };
 
   return (
-    <Top $scrolled={scrolled}>
-      <img src="/imagens/logo.svg" alt="CH Construtora logo" className="logo" />
+    <>
+      <Top $scrolled={scrolled}>
+        <img src="/imagens/logo.svg" alt="CH Construtora logo" className="logo" />
 
-      <nav className="desktop-nav">
-        <Link to="/" className={isHome && !isContato ? "active" : ""}>
-          Início
-        </Link>
-        <Link to="/sobre" className={isSobre ? "active" : ""}>
-          Sobre
-        </Link>
-        <DropdownWrapper
-          onMouseEnter={() => setDropdownOpen(true)}
-          onMouseLeave={() => setDropdownOpen(false)}
-        >
-          <Link to="/obras" className={isObras ? "active" : ""}>
-            Projetos
+        <nav className="desktop-nav">
+          <Link to="/" className={isHome && !isContato ? "active" : ""}>
+            Início
           </Link>
-          <DropdownMenu $isOpen={dropdownOpen}>
-            <DropdownItem to="/condominios/sagrada-familia">
-              Sagrada Família
-            </DropdownItem>
-            <DropdownItem to="/condominios/villa-blanca-i">
-              Villa Blanca I
-            </DropdownItem>
-            <DropdownItem to="/condominios/villa-blanca-ii">
-              Villa Blanca II
-            </DropdownItem>
-            <DropdownItem to="/obras" className="divider">
-              Ver todos
-            </DropdownItem>
-          </DropdownMenu>
-        </DropdownWrapper>
-        <Link
-          to="/"
-          state={{ scrollToContact: true }}
-          className={isContato ? "active" : ""}
-        >
-          Contato
-        </Link>
-      </nav>
+          <Link to="/sobre" className={isSobre ? "active" : ""}>
+            Sobre
+          </Link>
+          <DropdownWrapper
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <Link to="/obras" className={isObras ? "active" : ""}>
+              Projetos
+            </Link>
+            <DropdownMenu $isOpen={dropdownOpen}>
+              <DropdownItem to="/condominios/sagrada-familia">
+                Sagrada Família
+              </DropdownItem>
+              <DropdownItem to="/condominios/villa-blanca-i">
+                Villa Blanca I
+              </DropdownItem>
+              <DropdownItem to="/condominios/villa-blanca-ii">
+                Villa Blanca II
+              </DropdownItem>
+              <DropdownItem to="/obras" className="divider">
+                Ver todos
+              </DropdownItem>
+            </DropdownMenu>
+          </DropdownWrapper>
+          <Link
+            to="/"
+            state={{ scrollToContact: true }}
+            className={isContato ? "active" : ""}
+          >
+            Contato
+          </Link>
+        </nav>
 
-      <MenuButton
-        type="button"
-        aria-label="Abrir menu de navegação"
-        aria-expanded={menuOpen}
-        onClick={() => setMenuOpen((prev) => !prev)}
-      >
-        <span />
-        <span />
-        <span />
-      </MenuButton>
+        <MenuButton
+          type="button"
+          aria-label="Abrir menu de navegação"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          <span />
+          <span />
+          <span />
+        </MenuButton>
+      </Top>
 
       {menuOpen && <MobileBackdrop onClick={closeMenu} />}
 
@@ -136,7 +138,7 @@ const Header = () => {
           </Link>
         </MobileMenuLinks>
       </MobileMenu>
-    </Top>
+    </>
   );
 };
 

@@ -210,7 +210,7 @@ export const TextoRetangulo = styled.span`
     }
 `;
 
-export const BotaoConhecaMais = styled.button`
+export const BotaoConhecaMais = styled.div`
     border: none;
     display: flex;
     width: 100%;
@@ -219,7 +219,7 @@ export const BotaoConhecaMais = styled.button`
     opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
     animation: ${({ $isVisible }) => $isVisible ? fadeInUp : 'none'} 0.8s ease-out 1.2s forwards;
 
-    button {
+    a {
         margin-top: 3.25rem;
         color: #fff;
         text-align: center;
@@ -227,6 +227,7 @@ export const BotaoConhecaMais = styled.button`
         font-weight: 400;
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        text-decoration: none;
         border-radius: 0.5rem;
         background: linear-gradient(135deg, #bdad77 0%, #8a7d54 100%);
         width: 20.8125rem;
@@ -267,6 +268,7 @@ export const BotaoConhecaMais = styled.button`
         &:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(189, 173, 119, 0.35);
+            color: #fff;
         }
 
         &:hover::before {

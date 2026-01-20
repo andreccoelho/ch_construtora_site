@@ -1,1 +1,1 @@
-Preciso que voce substitua do botões utilizados no projeto pelo botão que é utilizado no NossosProjetos.jsx (src/components/NossosProjetos/NossosProjetos.jsx) que é mais bonito.
+O menu mobile esta quebrando quando acionado no meio da página. Corrija isso.
