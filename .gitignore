@@ -48,3 +48,6 @@ build
 public/imagens
 
 michel
+
+# ignora arquivos zip
+*.zip
