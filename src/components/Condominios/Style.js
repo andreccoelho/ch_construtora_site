@@ -61,7 +61,6 @@ export const TituloSecao = styled.h2`
 `;
 
 export const ListaCards = styled.div`
-    width: 90rem;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -82,7 +81,7 @@ export const CardCondominio = styled.div`
     grid-template-columns: 1fr 1fr;
     column-gap: 3rem;
     align-items: center;
-    max-width: 85%;
+    max-width: 90%;
     padding: 2rem;
     border-radius: 1.5rem;
     background: rgba(255, 255, 255, 0.02);
@@ -121,6 +120,7 @@ export const ColunaEsquerda = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 0;
+    overflow: hidden;
 `;
 
 export const ImagemCondominio = styled.div`

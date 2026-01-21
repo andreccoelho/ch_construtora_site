@@ -60,6 +60,7 @@ export const LogoWrapper = styled.div`
   @media (max-width: 480px) {
     img {
       max-width: 180px;
+width: 100%;
     }
   }
 `;

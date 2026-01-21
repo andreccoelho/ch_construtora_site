@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { SecaoObrasProjetos, ConteudoColunas, Coluna, LinhaIconeTexto, IconeWrapper, TituloColuna, DescricaoColuna, BotaoSaibaMais } from "./Style";
 
 const IconeGuindaste = () => (
@@ -56,6 +57,7 @@ const IconeRoloPintura = () => (
 );
 
 const ObrasProjetos = (props) => {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -106,7 +108,7 @@ const ObrasProjetos = (props) => {
           </DescricaoColuna>
         </Coluna>
       </ConteudoColunas>
-      <BotaoSaibaMais $isVisible={isVisible}>
+      <BotaoSaibaMais $isVisible={isVisible} onClick={() => navigate("/obras")}>
         Saiba mais
       </BotaoSaibaMais>
     </SecaoObrasProjetos>

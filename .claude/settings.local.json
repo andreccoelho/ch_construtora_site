@@ -5,7 +5,8 @@
       "Bash(dir \"C:\\\\Users\\\\André Costa\\\\ch_construtora_site\\\\public\\\\imagens\")",
       "Bash(findstr:*)",
       "Bash(npm run start-windows:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(git push:*)"
     ]
   }
 }
