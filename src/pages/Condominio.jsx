@@ -368,6 +368,33 @@ const SeloAVenda = styled.div`
     }
 `;
 
+const SeloVendido = styled.div`
+    width: 16rem;
+    height: 16rem;
+    background: url("/imagens/selo_vendido.png") center / contain no-repeat;
+    position: absolute;
+    right: -2rem;
+    bottom: -2rem;
+    z-index: 10;
+    pointer-events: none;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    animation: ${fadeInScale} 0.6s ease-out 0.4s backwards;
+
+    @media (max-width: 768px) {
+        width: 12rem;
+        height: 12rem;
+        right: -1.5rem;
+        bottom: -1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        width: 9rem;
+        height: 9rem;
+        right: -1rem;
+        bottom: -1rem;
+    }
+`;
+
 const Separador = styled.div`
     width: 100%;
     height: 1px;
@@ -635,7 +662,8 @@ const CASAS_POR_CONDOMINIO = {
             titulo: "Lote 3",
             descricao:
                 "Casa de 3 pavimentos, com ambientes amplos e bem distribuídos. Térreo com garagem, sala de estar com pé-direito duplo, sala de jantar, lavabo social, cozinha, lavanderia, área gourmet, piscina e banheiro externo. Primeiro pavimento com três suítes, sendo uma suíte máster, todas com closet e varanda. Segundo pavimento com ambiente com banheiro que pode ser usado como quarto, sala de jogos ou cinema, além de área descoberta.",
-            aVenda: true,
+            aVenda: false,
+            vendido: true,
             fotos: [
                 "/imagens/projetos/projeto-ch/VB_21.jpg",
                 "/imagens/projetos/projeto-ch/VB_26.jpg",
@@ -749,6 +777,7 @@ const Condominio = () => {
                                                 />
                                             ))}
                                         </ColunaGaleria>
+                                        {casa.vendido && <SeloVendido />}
                                         {casa.aVenda && <SeloAVenda />}
                                     </CardCasa>
                                     <Separador/>
