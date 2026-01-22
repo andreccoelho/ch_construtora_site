@@ -11,7 +11,7 @@ const Banner = ({ onScrollDown }) => {
             <PalavraDestaque>excelência</PalavraDestaque>
           </h1>
           <TextoSecundario>
-            Mais de 6 anos transformando projetos em realidade. Especialistas em construção de casas de alto padrão.
+            8 anos transformando projetos em realidade. Especialistas em construção de casas de alto padrão.
           </TextoSecundario>
           <BotaoScroll type="button" aria-label="Role para baixo" onClick={onScrollDown}>
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">

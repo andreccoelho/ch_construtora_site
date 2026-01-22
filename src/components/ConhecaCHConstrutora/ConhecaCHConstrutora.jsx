@@ -220,7 +220,7 @@ const ConhecaCHConstrutora = () => {
               <IconeWrapper>
                 <IconeTrofeu />
               </IconeWrapper>
-              <TextoRetangulo>+8 anos de experiência</TextoRetangulo>
+              <TextoRetangulo>8 anos de experiência</TextoRetangulo>
             </Retangulo>
 
             <Retangulo $isVisible={isVisible} $delay={1}>

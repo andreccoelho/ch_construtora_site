@@ -18,7 +18,7 @@ const BannerSobre = () => {
                     </h1>
                     <TextoSecundario>
                         A CH CONSTRUTORA foi fundada em 2018 com uma missão clara: oferecer aos nossos clientes a melhor
-                        experiência em construção de casas. Ao longo de mais de 6 anos de atuação, construímos uma
+                        experiência em construção de casas. Ao longo de 8 anos de atuação, construímos uma
                         trajetória sólida baseada em três pilares fundamentais: seriedade, inovação e comprometimento
                     </TextoSecundario>
                     <BotaoContato type="button" onClick={handleContactClick}>Entre em contato</BotaoContato>

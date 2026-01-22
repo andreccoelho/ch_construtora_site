@@ -52,7 +52,7 @@ const PorQueEscolher = () => {
               <TextoHeader>EXPERIÊNCIA</TextoHeader>
             </CardHeader>
             <CardDescricao>
-              Mais de 6 anos de atuação especializada em construções de casas de alto padrão.
+              8 anos de atuação especializada em construções de casas de alto padrão.
             </CardDescricao>
           </Card>
 

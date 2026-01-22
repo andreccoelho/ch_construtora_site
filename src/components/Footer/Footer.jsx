@@ -112,7 +112,7 @@ const Footer = () => {
           </SocialIconsRow>
 
           <LegalText>
-            Copyright © 2025 CH CONSTRUTORA LTDA | CNPJ 29.686.496/0001-80 | Todos os direitos reservados
+            Copyright © 2026 CH CONSTRUTORA LTDA | CNPJ 29.686.496/0001-80 | Todos os direitos reservados
           </LegalText>
         </BottomSection>
       </FooterContent>
