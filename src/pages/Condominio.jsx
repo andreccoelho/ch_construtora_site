@@ -448,14 +448,55 @@ const BotaoNavegar = styled.button`
     &:active {
         transform: translateY(-50%) scale(0.95);
     }
+
+    @media (max-width: 768px) {
+        top: auto;
+        bottom: -5rem;
+        transform: translateY(0);
+
+        &:hover {
+            transform: translateY(0) scale(1.15);
+        }
+
+        &:active {
+            transform: translateY(0) scale(0.95);
+        }
+    }
 `;
 
 const BotaoAnterior = styled(BotaoNavegar)`
     left: -4rem;
+
+    @media (max-width: 768px) {
+        left: 50%;
+        transform: translateX(-3.5rem);
+
+        &:hover {
+            transform: translateX(-3.5rem) scale(1.15);
+        }
+
+        &:active {
+            transform: translateX(-3.5rem) scale(0.95);
+        }
+    }
 `;
 
 const BotaoProximo = styled(BotaoNavegar)`
     right: -4rem;
+
+    @media (max-width: 768px) {
+        right: auto;
+        left: 50%;
+        transform: translateX(0.5rem);
+
+        &:hover {
+            transform: translateX(0.5rem) scale(1.15);
+        }
+
+        &:active {
+            transform: translateX(0.5rem) scale(0.95);
+        }
+    }
 `;
 
 const CONDOMINIOS = {
