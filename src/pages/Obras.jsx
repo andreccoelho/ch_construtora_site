@@ -1,12 +1,14 @@
 import Base from "./Base";
 import BannerObras from "../components/Banner/BannerObras";
-import Condominios from "../components/Condominios/Condominios";
+import CasasPorCondominio from "../components/CasasLista/CasasPorCondominio";
+import {STATUS} from "../data/casas";
 
+// Vitrine: casas já vendidas, agrupadas por condomínio.
 const Obras = () => {
   return (
     <Base>
       <BannerObras />
-      <Condominios />
+      <CasasPorCondominio status={STATUS.VENDIDO} />
     </Base>
   );
 };

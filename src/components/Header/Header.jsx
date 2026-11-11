@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { STATUS, condominiosComCasas } from "../../data/casas";
 import { Top, MenuButton, MobileMenu, MobileMenuLinks, MobileBackdrop, DropdownWrapper, DropdownMenu, DropdownItem, MobileDropdownWrapper, MobileDropdownToggle, MobileDropdownMenu } from "./Style";
 
 const Header = () => {
@@ -9,12 +10,16 @@ const Header = () => {
   const isHome = pathname === "/";
   const isSobre = pathname === "/sobre";
   const isObras = pathname.startsWith("/obras") || pathname.startsWith("/condominios");
+  const isAVenda = pathname.startsWith("/a-venda");
   const isContato = isHome && location.state && location.state.scrollToContact;
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const condominiosAVenda = condominiosComCasas(STATUS.A_VENDA);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [dropdownVendaOpen, setDropdownVendaOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [mobileVendaOpen, setMobileVendaOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +34,7 @@ const Header = () => {
   const closeMenu = () => {
     setMenuOpen(false);
     setMobileDropdownOpen(false);
+    setMobileVendaOpen(false);
   };
 
   return (
@@ -62,6 +68,24 @@ const Header = () => {
               </DropdownItem>
               <DropdownItem to="/obras" className="divider">
                 Ver todos
+              </DropdownItem>
+            </DropdownMenu>
+          </DropdownWrapper>
+          <DropdownWrapper
+            onMouseEnter={() => setDropdownVendaOpen(true)}
+            onMouseLeave={() => setDropdownVendaOpen(false)}
+          >
+            <Link to="/a-venda" className={isAVenda ? "active" : ""}>
+              À venda
+            </Link>
+            <DropdownMenu $isOpen={dropdownVendaOpen}>
+              {condominiosAVenda.map((c) => (
+                <DropdownItem key={c.slug} to={`/a-venda/${c.slug}`}>
+                  {c.titulo}
+                </DropdownItem>
+              ))}
+              <DropdownItem to="/a-venda" className="divider">
+                Ver todas
               </DropdownItem>
             </DropdownMenu>
           </DropdownWrapper>
@@ -125,6 +149,26 @@ const Header = () => {
               </Link>
               <Link to="/obras" onClick={closeMenu}>
                 Ver todos
+              </Link>
+            </MobileDropdownMenu>
+          </MobileDropdownWrapper>
+          <MobileDropdownWrapper>
+            <MobileDropdownToggle
+              className={isAVenda ? "active" : ""}
+              $isOpen={mobileVendaOpen}
+              onClick={() => setMobileVendaOpen(!mobileVendaOpen)}
+            >
+              À venda
+              <span>▼</span>
+            </MobileDropdownToggle>
+            <MobileDropdownMenu $isOpen={mobileVendaOpen}>
+              {condominiosAVenda.map((c) => (
+                <Link key={c.slug} to={`/a-venda/${c.slug}`} onClick={closeMenu}>
+                  {c.titulo}
+                </Link>
+              ))}
+              <Link to="/a-venda" onClick={closeMenu}>
+                Ver todas
               </Link>
             </MobileDropdownMenu>
           </MobileDropdownWrapper>

@@ -13,9 +13,12 @@ import {
   DescricaoCondominio,
   BotaoVejaCasas,
 } from "./Style";
+import { STATUS, condominiosComCasas } from "../../data/casas";
 
 const Condominios = () => {
   const navigate = useNavigate();
+  // Em "Projetos" só entram condomínios que têm casas já vendidas (vitrine).
+  const condominios = condominiosComCasas(STATUS.VENDIDO);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -44,81 +47,25 @@ const Condominios = () => {
     <SecaoCondominios ref={sectionRef}>
       <TituloSecao $isVisible={isVisible}>Condomínios</TituloSecao>
       <ListaCards>
-        <CardCondominio $isVisible={isVisible} $delay={0}>
-          <ColunaEsquerda>
-            <ImagemCondominio imagem="/imagens/vilablancaI.png" />
-            <NomeCondominioWrapper>
-              <NomeCondominio>Villa Blanca I</NomeCondominio>
-            </NomeCondominioWrapper>
-          </ColunaEsquerda>
-          <ColunaDireita>
-            <DescricaoCondominio>
-              O Condomínio Villa Blanca, no Recreio dos Bandeirantes, oferece um estilo de vida
-              sofisticado, com casas de arquitetura moderna, acabamentos de alto padrão e ambientes
-              amplos. O condomínio conta com lazer completo — piscinas, quadras, área gourmet,
-              churrasqueiras e espaços infantis — além de segurança 24h e controle de acesso.
-              Localizado em uma área privilegiada, fica próximo a shoppings, escolas, serviços e
-              praias. É a opção ideal para quem busca luxo, conforto e exclusividade.
-            </DescricaoCondominio>
-            <BotaoVejaCasas
-              type="button"
-              onClick={() => navigate("/condominios/villa-blanca-i")}
-            >
-              Veja as casas
-            </BotaoVejaCasas>
-          </ColunaDireita>
-        </CardCondominio>
-
-        <CardCondominio $isVisible={isVisible} $delay={1}>
-          <ColunaEsquerda>
-            <ImagemCondominio imagem="/imagens/vilablancaII.png" />
-            <NomeCondominioWrapper>
-              <NomeCondominio>Villa Blanca II</NomeCondominio>
-            </NomeCondominioWrapper>
-          </ColunaEsquerda>
-          <ColunaDireita>
-            <DescricaoCondominio>
-              O Villa Blanca II Residence é um condomínio fechado que oferece elegância, conforto,
-              segurança e exclusividade, ideal tanto para morar quanto para investir. Moderno e
-              sofisticado, conta com a opção de personalização pelo proprietário. O condomínio
-              dispõe de lazer privativo e ampla área comum, incluindo quadra poliesportiva, quadra de
-              areia, pista de skate, churrasqueiras, parque infantil, piscinas, academia,
-              brinquedoteca e áreas externas de convivência. É o lugar perfeito para viver momentos
-              especiais com família e amigos.
-            </DescricaoCondominio>
-            <BotaoVejaCasas
-              type="button"
-              onClick={() => navigate("/condominios/villa-blanca-ii")}
-            >
-              Veja as casas
-            </BotaoVejaCasas>
-          </ColunaDireita>
-        </CardCondominio>
-
-        <CardCondominio $isVisible={isVisible} $delay={2}>
-          <ColunaEsquerda>
-            <ImagemCondominio imagem="/imagens/sagradafamilia.png" />
-            <NomeCondominioWrapper>
-              <NomeCondominio>Sagrada Família</NomeCondominio>
-            </NomeCondominioWrapper>
-          </ColunaEsquerda>
-          <ColunaDireita>
-            <DescricaoCondominio>
-              O condomínio Sagrada Família, localizado no Recreio dos Bandeirantes, é um
-              empreendimento de alto padrão que reúne luxo, privacidade e excelente localização. Com
-              arquitetura sofisticada, oferece ambientes amplos e elegantes. Possui estrutura
-              completa, incluindo piscina, academia, spa, área de lazer e jardins planejados,
-              garantindo conforto e momentos especiais. Conta ainda com segurança 24h, proporcionando
-              tranquilidade, exclusividade e qualidade de vida em cada detalhe.
-            </DescricaoCondominio>
-            <BotaoVejaCasas
-              type="button"
-              onClick={() => navigate("/condominios/sagrada-familia")}
-            >
-              Veja as casas
-            </BotaoVejaCasas>
-          </ColunaDireita>
-        </CardCondominio>
+        {condominios.map((condominio, index) => (
+          <CardCondominio key={condominio.slug} $isVisible={isVisible} $delay={index}>
+            <ColunaEsquerda>
+              <ImagemCondominio imagem={condominio.imagem} />
+              <NomeCondominioWrapper>
+                <NomeCondominio>{condominio.titulo}</NomeCondominio>
+              </NomeCondominioWrapper>
+            </ColunaEsquerda>
+            <ColunaDireita>
+              <DescricaoCondominio>{condominio.descricao}</DescricaoCondominio>
+              <BotaoVejaCasas
+                type="button"
+                onClick={() => navigate(`/condominios/${condominio.slug}`)}
+              >
+                Veja as casas
+              </BotaoVejaCasas>
+            </ColunaDireita>
+          </CardCondominio>
+        ))}
       </ListaCards>
     </SecaoCondominios>
   );
