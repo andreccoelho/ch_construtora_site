@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Botao } from "../ui/Botao";
 
 export const DivisorContato = styled.section`
   background: #000000;
@@ -155,78 +156,7 @@ export const BlocoHorario = styled.div`
   }
 `;
 
-export const BotaoOrcamento = styled.a`
-  display: inline-block;
-  color: #fff;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 0.5rem;
-  background: linear-gradient(135deg, #bdad77 0%, #8a7d54 100%);
-  width: 20.8125rem;
-  max-width: 90%;
-  padding: 1rem 2rem;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(189, 173, 119, 0.2);
-  box-sizing: border-box;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-    transition: left 0.6s ease;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 0.5rem;
-    padding: 2px;
-    background: linear-gradient(135deg, #bdad77, #575037);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(189, 173, 119, 0.35);
-    color: #fff;
-  }
-
-  &:hover::before {
-    left: 100%;
-  }
-
-  &:hover::after {
-    opacity: 1;
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-
-  @media (max-width: 768px) {
-    font-size: 0.875rem;
-    width: 100%;
-    max-width: 18rem;
-    padding: 0.875rem 1.5rem;
-  }
-`;
+export const BotaoOrcamento = styled(Botao).attrs({ as: "a", $bloco: true })``;
 
 export const ColunaDireita = styled.div`
   display: flex;
@@ -246,15 +176,21 @@ export const CampoInput = styled.input`
   font-family: inherit;
   font-size: 1rem;
   font-weight: 300;
-  border: none;
+  border: 1px solid rgba(189, 173, 119, 0.18);
   outline: none;
   border-radius: 0.625rem;
   box-shadow: 0 4px 18.7px 1px rgba(0, 0, 0, 0.17);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    border-color: #bdad77;
+    box-shadow: 0 0 0 3px rgba(189, 173, 119, 0.2);
+  }
   margin-bottom: 1.25rem;
   box-sizing: border-box;
 
   &::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.65);
     font-weight: 300;
   }
 
@@ -274,17 +210,23 @@ export const CampoTextarea = styled.textarea`
   font-family: inherit;
   font-size: 1rem;
   font-weight: 300;
-  border: none;
+  border: 1px solid rgba(189, 173, 119, 0.18);
   outline: none;
   border-radius: 0.625rem;
   box-shadow: 0 4px 18.7px 1px rgba(0, 0, 0, 0.17);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:focus {
+    border-color: #bdad77;
+    box-shadow: 0 0 0 3px rgba(189, 173, 119, 0.2);
+  }
   resize: none;
   min-height: 8rem;
   margin-bottom: 2rem;
   box-sizing: border-box;
 
   &::placeholder {
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.65);
     font-weight: 300;
   }
 
@@ -297,70 +239,4 @@ export const CampoTextarea = styled.textarea`
   }
 `;
 
-export const BotaoEnviar = styled.button`
-  color: #fff;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 0.5rem;
-  background: linear-gradient(135deg, #bdad77 0%, #8a7d54 100%);
-  width: 20.8125rem;
-  max-width: 100%;
-  padding: 1rem 2rem;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 15px rgba(189, 173, 119, 0.2);
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-    transition: left 0.6s ease;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 0.5rem;
-    padding: 2px;
-    background: linear-gradient(135deg, #bdad77, #575037);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(189, 173, 119, 0.35);
-  }
-
-  &:hover::before {
-    left: 100%;
-  }
-
-  &:hover::after {
-    opacity: 1;
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-
-  @media (max-width: 768px) {
-    font-size: 0.875rem;
-    width: 100%;
-    padding: 0.875rem 1.5rem;
-  }
-`;
+export const BotaoEnviar = styled(Botao).attrs({ $bloco: true })``;

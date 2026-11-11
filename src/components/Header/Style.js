@@ -69,6 +69,14 @@ const Top = styled.header`
     }
   }
 
+  @media (max-width: 1200px) {
+    padding: ${props => props.$scrolled ? '1em 3em' : '1.5em 3em'};
+
+    .desktop-nav {
+      gap: 2rem;
+    }
+  }
+
   @media (max-width: 768px) {
     padding: ${props => props.$scrolled ? '0.8rem 1.5rem' : '1rem 1.5rem'};
 

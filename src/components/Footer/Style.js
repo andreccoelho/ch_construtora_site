@@ -10,6 +10,10 @@ export const FooterWrapper = styled.footer`
   padding: 5rem 2rem 3rem 2rem;
   box-sizing: border-box;
   position: relative;
+
+  @media (max-width: 768px) {
+    padding-bottom: 6rem;
+  }
   border-top: 1px solid rgba(189, 173, 119, 0.15);
 
   &::before {

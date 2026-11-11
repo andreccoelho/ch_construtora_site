@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { Botao } from "../ui/Botao";
 import {
   SecaoConheca,
   Conteudo,
@@ -245,7 +246,9 @@ const ConhecaCHConstrutora = () => {
             </Retangulo>
           </MiniSecao>
           <BotaoConhecaMais $isVisible={isVisible}>
-            <Link to="/sobre">Conheça mais</Link>
+            <Botao as={Link} to="/sobre" $bloco>
+              Conheça mais
+            </Botao>
           </BotaoConhecaMais>
         </ColunaTexto>
       </Conteudo>

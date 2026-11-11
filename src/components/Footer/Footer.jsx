@@ -44,7 +44,7 @@ const Footer = () => {
             </SocialLink>
 
             <SocialLink
-              href="mailto:https://construtorach.construtora@gmail.com"
+              href="mailto:construtorach.construtora@gmail.com"
               aria-label="Email"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">

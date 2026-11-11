@@ -27,6 +27,12 @@ const TituloCondominio = styled.h2`
 
     @media (max-width: 768px) {
         font-size: 1.6rem;
+        letter-spacing: 0.1em;
+        padding: 0 1rem;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1.25rem;
     }
 `;
 

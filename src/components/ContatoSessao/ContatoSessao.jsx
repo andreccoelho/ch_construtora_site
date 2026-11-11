@@ -56,9 +56,9 @@ const ContatoSessao = () => {
           </ColunaEsquerda>
 
           <ColunaDireita>
-            <CampoInput type="text" placeholder="Seu nome" />
-            <CampoInput type="email" placeholder="Seu endereço de email" />
-            <CampoTextarea placeholder="Mensagem" />
+            <CampoInput type="text" name="nome" aria-label="Seu nome" autoComplete="name" placeholder="Seu nome" />
+            <CampoInput type="email" name="email" aria-label="Seu endereço de email" autoComplete="email" placeholder="Seu endereço de email" />
+            <CampoTextarea name="mensagem" aria-label="Mensagem" placeholder="Mensagem" />
             <BotaoEnviar>Enviar</BotaoEnviar>
           </ColunaDireita>
         </SecaoContato>

@@ -18,7 +18,7 @@ const Home = () => {
     const startY = window.scrollY || window.pageYOffset;
     const targetY = target.getBoundingClientRect().top + startY;
     const distance = targetY - startY;
-    const duration = 12000;
+    const duration = 2500;
 
     let startTime = null;
     const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);

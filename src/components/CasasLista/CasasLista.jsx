@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import styled, {keyframes} from "styled-components";
 import {STATUS} from "../../data/casas";
+import {Botao} from "../ui/Botao";
 
 const fadeInScale = keyframes`
     from {
@@ -117,7 +118,7 @@ const DescricaoCasa = styled.p`
     color: #fff;
     font-size: 1.25rem;
     font-weight: 300;
-    line-height: 102.327%;
+    line-height: 1.5;
     max-width: 25.375rem;
 
     @media (max-width: 900px) {
@@ -135,74 +136,7 @@ const DescricaoCasa = styled.p`
     }
 `;
 
-const BotaoVerFotos = styled.button`
-    color: #fff;
-    text-align: center;
-    font-size: 0.95rem;
-    font-weight: 400;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    border-radius: 0.5rem;
-    background: linear-gradient(135deg, #bdad77 0%, #8a7d54 100%);
-    padding: 1rem 2rem;
-    border: none;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 15px rgba(189, 173, 119, 0.2);
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-        transition: left 0.6s ease;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: 0.5rem;
-        padding: 2px;
-        background: linear-gradient(135deg, #bdad77, #575037);
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(189, 173, 119, 0.35);
-    }
-
-    &:hover::before {
-        left: 100%;
-    }
-
-    &:hover::after {
-        opacity: 1;
-    }
-
-    &:active {
-        transform: translateY(0);
-    }
-
-    @media (max-width: 900px) {
-        font-size: 0.875rem;
-        padding: 0.875rem 1.5rem;
-    }
-
-    @media (max-width: 480px) {
-        width: 100%;
-    }
-`;
+const BotaoVerFotos = styled(Botao).attrs({ $bloco: true })``;
 
 const ColunaGaleria = styled.div`
     display: flex;
@@ -334,7 +268,9 @@ const Separador = styled.div`
 const ModalOverlay = styled.div`
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -354,6 +290,19 @@ const ModalImagem = styled.img`
     max-width: 100%;
     max-height: 100%;
     border-radius: 0.75rem;
+`;
+
+const ContadorFotos = styled.span`
+    position: absolute;
+    top: -2.5rem;
+    left: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+
+    @media (max-width: 768px) {
+        top: -2rem;
+    }
 `;
 
 const BotaoFechar = styled.button`
@@ -455,29 +404,8 @@ const BotaoProximo = styled(BotaoNavegar)`
     }
 `;
 
-const BotaoInteresse = styled.a`
-    display: inline-block;
+const BotaoInteresse = styled(Botao).attrs({ as: "a", $variante: "contorno", $bloco: true })`
     margin-top: 1rem;
-    color: #bdad77;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid rgba(189, 173, 119, 0.5);
-    border-radius: 0.5rem;
-    padding: 0.85rem 2rem;
-    text-align: center;
-    transition: all 0.3s ease;
-
-    &:hover {
-        background: rgba(189, 173, 119, 0.15);
-        border-color: #bdad77;
-    }
-
-    @media (max-width: 480px) {
-        width: 100%;
-        box-sizing: border-box;
-    }
 `;
 
 const WHATSAPP = "https://api.whatsapp.com/send?phone=21970380708";
@@ -594,14 +522,17 @@ const CasasLista = ({casas, condominios = {}}) => {
             {modalAberto && fotosModal.length > 0 && (
                 <ModalOverlay onClick={(e) => e.target === e.currentTarget && fecharModal()}>
                     <ModalConteudo>
-                        <BotaoFechar type="button" onClick={fecharModal}>
+                        <ContadorFotos>
+                            {indiceAtual + 1} / {fotosModal.length}
+                        </ContadorFotos>
+                        <BotaoFechar type="button" aria-label="Fechar galeria" onClick={fecharModal}>
                             ×
                         </BotaoFechar>
-                        <BotaoAnterior type="button" onClick={irParaAnterior}>
+                        <BotaoAnterior type="button" aria-label="Foto anterior" onClick={irParaAnterior}>
                             ‹
                         </BotaoAnterior>
                         <ModalImagem src={fotosModal[indiceAtual]} alt="Foto da casa"/>
-                        <BotaoProximo type="button" onClick={irParaProximo}>
+                        <BotaoProximo type="button" aria-label="Próxima foto" onClick={irParaProximo}>
                             ›
                         </BotaoProximo>
                     </ModalConteudo>

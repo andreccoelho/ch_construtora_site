@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { Botao } from "../ui/Botao";
 
 const fadeInUp = keyframes`
   from {
@@ -197,73 +198,8 @@ export const DescricaoColuna = styled.p`
   }
 `;
 
-export const BotaoSaibaMais = styled.button`
+export const BotaoSaibaMais = styled(Botao).attrs({ $bloco: true })`
   margin-top: 3.19rem;
-  color: #fff;
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 0.5rem;
-  background: linear-gradient(135deg, #bdad77 0%, #8a7d54 100%);
-  width: 20.8125rem;
-  max-width: 90%;
-  padding: 1rem 2rem;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
   animation: ${({ $isVisible }) => $isVisible ? fadeInUp : 'none'} 0.8s ease-out 0.5s forwards;
-  box-shadow: 0 4px 15px rgba(189, 173, 119, 0.2);
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-    transition: left 0.6s ease;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 0.5rem;
-    padding: 2px;
-    background: linear-gradient(135deg, #bdad77, #575037);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(189, 173, 119, 0.35);
-  }
-
-  &:hover::before {
-    left: 100%;
-  }
-
-  &:hover::after {
-    opacity: 1;
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-
-  @media (max-width: 768px) {
-    font-size: 0.875rem;
-    width: 18rem;
-    padding: 0.875rem 1.5rem;
-  }
 `;
