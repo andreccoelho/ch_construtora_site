@@ -5,6 +5,7 @@ import Banner from "../components/Banner/Banner";
 import ObrasProjetos from "../components/ObrasProjetos/ObrasProjetos";
 import ConhecaCHConstrutora from "../components/ConhecaCHConstrutora/ConhecaCHConstrutora";
 import NossosProjetos from "../components/NossosProjetos/NossosProjetos";
+import CasasAVendaHome from "../components/CasasAVendaHome/CasasAVendaHome";
 import ContatoSessao from "../components/ContatoSessao/ContatoSessao";
 
 const Home = () => {
@@ -53,6 +54,7 @@ const Home = () => {
       <ObrasProjetos id="obras-projetos" />
       <ConhecaCHConstrutora />
       <NossosProjetos />
+      <CasasAVendaHome />
       <ContatoSessao id="contato" />
     </Base>
   );

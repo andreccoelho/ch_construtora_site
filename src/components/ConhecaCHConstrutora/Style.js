@@ -46,8 +46,8 @@ export const Conteudo = styled.div`
     max-width: 100%;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    column-gap: 4rem;
-    align-items: flex-start;
+    column-gap: 5rem;
+    align-items: stretch;
 
     @media (max-width: 768px) {
         display: flex;
@@ -58,31 +58,78 @@ export const Conteudo = styled.div`
 
 export const ColunaImagem = styled.div`
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    padding: 0 0 1.25rem 1.25rem;
     opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
     animation: ${({ $isVisible }) => $isVisible ? fadeInLeft : 'none'} 1s ease-out forwards;
 
     @media (max-width: 768px) {
         justify-content: center;
+        padding: 0 0 1rem 1rem;
     }
 `;
 
 export const ImagemWrapper = styled.div`
-    width: 100%;
-    max-width: 100%;
     position: relative;
+    width: 100%;
+    max-width: 34rem;
+    min-height: 30rem;
+    isolation: isolate;
+
+    /* moldura dourada deslocada atrás da foto */
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        transform: translate(-1.25rem, 1.25rem);
+        border: 1px solid rgba(189, 173, 119, 0.55);
+        border-radius: 0.75rem;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    /* degradê sutil para integrar a foto ao fundo escuro */
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 0.75rem;
+        background:
+            linear-gradient(180deg, rgba(26, 26, 26, 0) 55%, rgba(26, 26, 26, 0.55) 100%),
+            linear-gradient(90deg, rgba(26, 26, 26, 0.15) 0%, rgba(26, 26, 26, 0) 40%);
+        box-shadow: inset 0 0 0 1px rgba(189, 173, 119, 0.18);
+        pointer-events: none;
+    }
 
     @media screen and (max-width: 768px) {
         max-width: 28rem;
+        min-height: 0;
+        aspect-ratio: 4 / 5;
+
+        &::before {
+            transform: translate(-1rem, 1rem);
+        }
     }
 `;
 
 export const Imagem = styled.img`
     display: block;
-    max-width: 33.125rem;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
+    object-position: 65% 35%;
+    border-radius: 0.75rem;
+    box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.55),
+        0 8px 16px rgba(0, 0, 0, 0.35);
+    filter: saturate(0.92) contrast(1.04);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    ${ImagemWrapper}:hover & {
+        transform: scale(1.015);
+    }
 `;
 
 export const ColunaTexto = styled.div`

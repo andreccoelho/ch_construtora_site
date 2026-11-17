@@ -41,15 +41,16 @@ export const SecaoNossaEquipe = styled.section`
   align-items: center;
   gap: 5rem;
   background: #141414;
-  padding: 4rem 1rem 4rem 1rem;
+  padding: 4rem 1.5rem;
 `;
 
 export const Conteudo = styled.div`
-  width: 90rem;
+  width: 80rem;
   max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  align-items: center;
   margin: 0 auto;
 
   @media (max-width: 900px) {
@@ -123,10 +124,11 @@ export const ColunaImagens = styled.div`
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-  align-items: center;
+  /* Fotos encostadas na borda externa do layout (zigue-zague espelhado) */
+  align-items: ${({ $lado }) => ($lado === "esquerda" ? "flex-start" : "flex-end")};
   justify-content: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     align-items: center;
   }
 `;
@@ -145,22 +147,14 @@ export const ImagemPequena = styled.div`
 
 export const ImagemPrincipalWrapper = styled.div`
   width: 100%;
-  max-width: 28.5625rem;
+  max-width: 30rem;
   opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
   animation: ${({ $isVisible }) => $isVisible ? fadeInRight : 'none'} 1s ease-out 0.4s forwards;
-
-  @media (max-width: 768px) {
-    display: flex;
-    justify-content: center;
-  }
 `;
 
 export const ImagemPrincipal = styled.div`
   width: 100%;
-  max-width: 28.5625rem;
-  height: auto;
-  min-height: 18rem;
-  aspect-ratio: 457 / 486;
+  aspect-ratio: 1 / 1;
   background: url("/imagens/equipe.jpeg") lightgray -438px -334px / 256.018% 176.955% no-repeat;
   background-size: cover;
   background-position: center;
@@ -193,7 +187,6 @@ export const Subtitulo = styled(Titulo)`
 export const ImagemArquitetura = styled.img`
   display: block;
   width: 100%;
-  max-width: 28.5625rem;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 0.625rem;

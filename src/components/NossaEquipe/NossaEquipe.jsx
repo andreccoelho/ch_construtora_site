@@ -57,7 +57,7 @@ const NossaEquipe = () => {
         </ColunaImagens>
       </Conteudo>
       <BlocoArquitetura>
-        <ColunaImagens>
+        <ColunaImagens $lado="esquerda">
           <ImagemPrincipalWrapper $isVisible={isVisible}>
             <ImagemArquitetura
               src="/imagens/equipe_arquitetura.jpg"
