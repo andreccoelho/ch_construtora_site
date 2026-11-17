@@ -40,7 +40,7 @@ const Header = () => {
   return (
     <>
       <Top $scrolled={scrolled}>
-        <img src="/imagens/logo.svg" alt="CH Construtora logo" className="logo" />
+        <img src="/imagens/logo.svg" alt="CH logo" className="logo" />
 
         <nav className="desktop-nav">
           <Link to="/" className={isHome && !isContato ? "active" : ""}>

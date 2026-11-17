@@ -37,6 +37,9 @@ export const SecaoNossaEquipe = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
   background: #141414;
   padding: 4rem 1rem 4rem 1rem;
 `;
@@ -105,6 +108,10 @@ export const Descricao = styled.p`
   opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
   animation: ${({ $isVisible }) => $isVisible ? fadeInLeft : 'none'} 1s ease-out 0.2s forwards;
 
+  & + & {
+    margin-top: 1.25rem;
+  }
+
   @media (max-width: 768px) {
     font-size: 1rem;
     text-align: center;
@@ -157,6 +164,38 @@ export const ImagemPrincipal = styled.div`
   background: url("/imagens/equipe.jpeg") lightgray -438px -334px / 256.018% 176.955% no-repeat;
   background-size: cover;
   background-position: center;
+  border-radius: 0.625rem;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+`;
+
+export const BlocoArquitetura = styled(Conteudo)`
+  align-items: center;
+
+  @media (max-width: 900px) {
+    > :first-child {
+      order: 2;
+    }
+  }
+`;
+
+export const Subtitulo = styled(Titulo)`
+  font-size: 2.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+`;
+
+export const ImagemArquitetura = styled.img`
+  display: block;
+  width: 100%;
+  max-width: 28.5625rem;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 0.625rem;
   transition: transform 0.3s ease;
 

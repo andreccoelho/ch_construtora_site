@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   SecaoNossaEquipe,
   Conteudo,
@@ -9,6 +9,9 @@ import {
   ColunaImagens,
   ImagemPrincipalWrapper,
   ImagemPrincipal,
+  BlocoArquitetura,
+  ImagemArquitetura,
+  Subtitulo,
 } from "./Style";
 
 const NossaEquipe = () => {
@@ -22,7 +25,7 @@ const NossaEquipe = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
@@ -40,7 +43,7 @@ const NossaEquipe = () => {
     <SecaoNossaEquipe ref={sectionRef}>
       <Conteudo>
         <LinhaConteudo>
-          <Titulo $isVisible={isVisible}>Nossa equipe!</Titulo>
+          <Titulo $isVisible={isVisible}>Nossa equipe</Titulo>
           <ColunaTexto>
             <Descricao $isVisible={isVisible}>
               Nossa equipe é formada por profissionais altamente capacitados e especializados em todas as etapas do processo construtivo. Da concepção do projeto arquitetônico até a entrega final das chaves, acompanhamos cada detalhe com dedicação e profissionalismo.
@@ -53,6 +56,30 @@ const NossaEquipe = () => {
           </ImagemPrincipalWrapper>
         </ColunaImagens>
       </Conteudo>
+      <BlocoArquitetura>
+        <ColunaImagens>
+          <ImagemPrincipalWrapper $isVisible={isVisible}>
+            <ImagemArquitetura
+              src="/imagens/equipe_arquitetura.jpg"
+              alt="Equipe de arquitetura da CH Arquitetura & Engenharia"
+            />
+          </ImagemPrincipalWrapper>
+        </ColunaImagens>
+        <LinhaConteudo>
+          <Subtitulo $isVisible={isVisible}>Equipe de arquitetura</Subtitulo>
+          <ColunaTexto>
+            <Descricao $isVisible={isVisible}>
+              Profissionais especializados e comprometidos com a excelência, a criatividade e o rigor técnico em cada projeto.
+            </Descricao>
+            <Descricao $isVisible={isVisible}>
+              Com atenção aos detalhes e às necessidades de cada cliente, desenvolvemos soluções que integram estética, funcionalidade e qualidade, conduzindo cada etapa com eficiência e responsabilidade.
+            </Descricao>
+            <Descricao $isVisible={isVisible}>
+              Mais do que projetar espaços, transformamos ideias em projetos únicos.
+            </Descricao>
+          </ColunaTexto>
+        </LinhaConteudo>
+      </BlocoArquitetura>
     </SecaoNossaEquipe>
   );
 };

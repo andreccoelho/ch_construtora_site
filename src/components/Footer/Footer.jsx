@@ -14,7 +14,7 @@ const Footer = () => {
     <FooterWrapper id="footer">
       <FooterContent>
         <LogoWrapper>
-          <img src="/imagens/logo.svg" alt="CH Construtora logo" />
+          <img src="/imagens/logo.svg" alt="CH logo" />
         </LogoWrapper>
 
         <Separador />
@@ -112,7 +112,7 @@ const Footer = () => {
           </SocialIconsRow>
 
           <LegalText>
-            Copyright © 2026 CH CONSTRUTORA LTDA | CNPJ 29.686.496/0001-80 | Todos os direitos reservados
+            Copyright © 2026 CH ARQUITETURA &amp; ENGENHARIA | CNPJ 29.686.496/0001-80 | Todos os direitos reservados
           </LegalText>
         </BottomSection>
       </FooterContent>

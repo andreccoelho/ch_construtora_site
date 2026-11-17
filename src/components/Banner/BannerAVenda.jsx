@@ -17,7 +17,7 @@ const BannerAVenda = () => {
                         <PalavraDestaque>à venda</PalavraDestaque>
                     </h1>
                     <TextoSecundario>
-                        Imóveis disponíveis para venda, construídos pela CH Construtora.
+                        Imóveis disponíveis para venda, construídos pela CH Arquitetura &amp; Engenharia.
                         Corretores e interessados podem falar direto com a nossa equipe para receber fotos, plantas e condições.
                     </TextoSecundario>
                     <BotaoContato type="button" onClick={handleContactClick}>Entre em contato</BotaoContato>

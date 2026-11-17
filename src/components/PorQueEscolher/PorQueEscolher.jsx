@@ -42,7 +42,7 @@ const PorQueEscolher = () => {
         <TituloPrincipal $isVisible={isVisible}>
           POR QUE ESCOLHER A CH
           <br />
-          CONSTRUTORA?
+          ARQUITETURA &amp; ENGENHARIA?
         </TituloPrincipal>
 
         <ContainerCards>

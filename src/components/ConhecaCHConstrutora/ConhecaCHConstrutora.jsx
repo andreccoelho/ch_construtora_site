@@ -202,14 +202,14 @@ const ConhecaCHConstrutora = () => {
         <ColunaImagem $isVisible={isVisible}>
           <ImagemWrapper>
             <Imagem
-              src="/imagens/conheca_ch.png"
-              alt="Equipe da CH Construtora trabalhando em um projeto"
+              src="/imagens/conheca_ch.jpg"
+              alt="CH Arquitetura & Engenharia"
             />
           </ImagemWrapper>
         </ColunaImagem>
 
         <ColunaTexto>
-          <Titulo $isVisible={isVisible}>Conheça a CH Construtora</Titulo>
+          <Titulo $isVisible={isVisible}>Conheça a CH Arquitetura &amp; Engenharia</Titulo>
           <Descricao $isVisible={isVisible}>
             Desde 2018 no mercado, nós nos dedicamos a entregar projetos
             personalizados de alto padrão. Nossa missão é construir não apenas
