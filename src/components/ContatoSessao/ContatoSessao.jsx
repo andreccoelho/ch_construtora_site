@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   DivisorContato,
   TextoDivisor,
@@ -17,9 +17,35 @@ import {
   CampoInput,
   CampoTextarea,
   BotaoEnviar,
+  MensagemStatus,
 } from "./Style";
 
+// ID do formulário criado em https://formspree.io (o e-mail de destino é
+// configurado lá, no cadastro do formulário). Formato: "xxxxxxxx".
+const FORMSPREE_ID = "SEU_ID_FORMSPREE";
+const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
+
 const ContatoSessao = () => {
+  const [status, setStatus] = useState("idle"); // idle | enviando | sucesso | erro
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus("enviando");
+    try {
+      const response = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      if (!response.ok) throw new Error(`Formspree respondeu ${response.status}`);
+      form.reset();
+      setStatus("sucesso");
+    } catch (erro) {
+      setStatus("erro");
+    }
+  };
+
   return (
     <>
       <DivisorContato>
@@ -55,11 +81,17 @@ const ContatoSessao = () => {
             </BotaoOrcamento>
           </ColunaEsquerda>
 
-          <ColunaDireita>
-            <CampoInput type="text" name="nome" aria-label="Seu nome" autoComplete="name" placeholder="Seu nome" />
-            <CampoInput type="email" name="email" aria-label="Seu endereço de email" autoComplete="email" placeholder="Seu endereço de email" />
-            <CampoTextarea name="mensagem" aria-label="Mensagem" placeholder="Mensagem" />
-            <BotaoEnviar>Enviar</BotaoEnviar>
+          <ColunaDireita as="form" onSubmit={handleSubmit}>
+            <CampoInput type="text" name="nome" aria-label="Seu nome" autoComplete="name" placeholder="Seu nome" required />
+            <CampoInput type="email" name="email" aria-label="Seu endereço de email" autoComplete="email" placeholder="Seu endereço de email" required />
+            <CampoTextarea name="mensagem" aria-label="Mensagem" placeholder="Mensagem" required />
+            <BotaoEnviar type="submit" disabled={status === "enviando"}>
+              {status === "enviando" ? "Enviando..." : "Enviar"}
+            </BotaoEnviar>
+            <MensagemStatus role="status" $erro={status === "erro"}>
+              {status === "sucesso" && "Mensagem enviada! Entraremos em contato em breve."}
+              {status === "erro" && "Não foi possível enviar. Tente novamente ou fale conosco pelo WhatsApp."}
+            </MensagemStatus>
           </ColunaDireita>
         </SecaoContato>
       </SecaoContatoWrapper>
