@@ -3,9 +3,9 @@ const path = require("path");
 const package = require("./package.json");
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-module.exports = {
+module.exports = (env, argv) => ({
   entry: path.resolve(__dirname, "./src/index.js"),
-  devtool: 'inline-source-map',
+  devtool: argv.mode === 'development' ? 'inline-source-map' : false,
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "./build",)
@@ -36,7 +36,6 @@ module.exports = {
     ),
     new webpack.DefinePlugin(
       {
-        "process.env": JSON.stringify(process.env),
         "process.env.PUBLIC_URL": JSON.stringify(package.homepage)
       }
     )
@@ -48,4 +47,4 @@ module.exports = {
       directory: path.resolve(__dirname, './public')
     }
   }
-};
+});
