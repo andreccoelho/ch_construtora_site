@@ -49,3 +49,10 @@ michel
 
 # ignora arquivos zip
 *.zip
+# Órbita — anexos do chat
+.orbita/
+
+# deploy FTPS: exemplo versionado, segredo e backups nao
+!.env.deploy.example
+.env.deploy
+backups/
