@@ -14,7 +14,8 @@
     "deploy:check": "node scripts/ftp.mjs --check",
     "deploy:perms": "node scripts/ftp.mjs --perms",
     "deploy:hotfix": "node scripts/ftp.mjs --hotfix",
-    "deploy:compare": "node scripts/ftp.mjs --compare"
+    "deploy:compare": "node scripts/ftp.mjs --compare",
+    "deploy:full": "node scripts/ftp.mjs --full"
   },
   "author": "@EduardoMangeli",
   "license": "MIT",

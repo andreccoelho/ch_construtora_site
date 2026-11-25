@@ -1,5 +1,5 @@
 // Deploy por FTPS explicito (TLS) para a Hostgator.
-// Uso: node scripts/ftp.mjs --check | --perms <pasta> | --hotfix | --compare  [--dry-run]
+// Uso: node scripts/ftp.mjs --check | --perms <pasta> | --hotfix | --compare | --full  [--dry-run]
 // A senha vem so de .env.deploy (FTP_PASSWORD). Nunca e impressa nem logada.
 import { Client } from 'basic-ftp';
 import dotenv from 'dotenv';
@@ -22,7 +22,7 @@ const HOTFIX_FILES = [
 
 const args = process.argv.slice(2);
 const DRY = args.includes('--dry-run');
-const mode = args.find((a) => ['--check', '--perms', '--hotfix', '--compare'].includes(a));
+const mode = args.find((a) => ['--check', '--perms', '--hotfix', '--compare', '--full'].includes(a));
 
 function fail(msg) {
   console.error(`ERRO: ${msg}`);
@@ -194,7 +194,83 @@ async function cmdCompare(client) {
   console.log(remote === local ? 'IGUAIS' : 'DIFERENTES');
 }
 
-if (!mode) fail('use --check, --perms <pasta>, --hotfix ou --compare (opcional --dry-run)');
+const IMG_EXT = new Set(['.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif', '.svg']);
+
+function walkLocal(dir, rel = '', out = []) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+    const r = rel ? `${rel}/${e.name}` : e.name;
+    if (e.isDirectory()) walkLocal(path.join(dir, e.name), r, out);
+    else out.push({ rel: r, abs: path.join(dir, e.name), size: fs.statSync(path.join(dir, e.name)).size });
+  }
+  return out;
+}
+
+// Envia build/ inteiro: so o que falta no servidor ou tem tamanho diferente.
+// Nunca apaga nada no servidor e nunca toca em .htaccess.
+async function cmdFull(client) {
+  const build = path.join(ROOT, 'build');
+  if (!fs.existsSync(path.join(build, 'bundle.js'))) fail('build/bundle.js nao existe. Rode npm run build antes.');
+  const home = await client.pwd();
+  const local = walkLocal(build).filter((f) => path.basename(f.rel) !== '.htaccess');
+
+  // Lista cada pasta remota uma unica vez.
+  const remoteCache = new Map();
+  async function remoteSizes(dir) {
+    if (!remoteCache.has(dir)) {
+      const items = await client.list(dir === '' ? '.' : dir).catch(() => null);
+      remoteCache.set(dir, items ? new Map(items.map((i) => [i.name, i])) : null);
+    }
+    return remoteCache.get(dir);
+  }
+
+  const plan = [];
+  for (const f of local) {
+    const dir = path.posix.dirname(f.rel) === '.' ? '' : path.posix.dirname(f.rel);
+    const entries = await remoteSizes(dir);
+    const r = entries?.get(path.posix.basename(f.rel));
+    if (!r) plan.push({ ...f, dir, reason: 'novo' });
+    else if (r.size !== f.size) plan.push({ ...f, dir, reason: 'tamanho' });
+  }
+  const total = plan.reduce((a, f) => a + f.size, 0);
+  console.log(`${DRY ? '[dry-run] ' : ''}build local: ${local.length} arquivos | a enviar: ${plan.length} (${total} bytes)`);
+  plan.slice(0, 30).forEach((f) => console.log(`  ${f.reason === 'novo' ? '+' : '~'} ${f.rel} (${f.size})`));
+  if (plan.length > 30) console.log(`  ... mais ${plan.length - 30}`);
+  if (DRY || plan.length === 0) return;
+
+  const dest = path.join(ROOT, 'backups', `servidor_${stamp()}`);
+  const toBackup = plan.filter((f) => f.reason === 'tamanho' && !IMG_EXT.has(path.extname(f.rel).toLowerCase()));
+  for (const f of toBackup) {
+    const out = path.join(dest, ...f.rel.split('/'));
+    fs.mkdirSync(path.dirname(out), { recursive: true });
+    await client.downloadTo(out, f.rel);
+    console.log(`  backup: ${f.rel}`);
+  }
+
+  const madeDirs = new Set();
+  let up = 0;
+  let err = 0;
+  for (const f of plan) {
+    try {
+      if (f.dir && remoteCache.get(f.dir) === null && !madeDirs.has(f.dir)) {
+        await client.ensureDir(f.dir);
+        await client.cd(home);
+        const parts = f.dir.split('/');
+        for (let i = 1; i <= parts.length; i++) madeDirs.add(parts.slice(0, i).join('/'));
+      }
+      await client.uploadFrom(f.abs, f.rel);
+      await client.send(`SITE CHMOD 644 ${f.rel}`).catch(() => {});
+      up++;
+    } catch (e) {
+      err++;
+      console.error(`falhou: ${f.rel} (${e.message})`);
+    }
+  }
+  for (const d of madeDirs) await client.send(`SITE CHMOD 755 ${d}`).catch(() => {});
+  console.log(`enviados: ${up}, falhas: ${err}, pastas novas: ${madeDirs.size}, backups: ${toBackup.length}`);
+  if (err) process.exitCode = 1;
+}
+
+if (!mode) fail('use --check, --perms <pasta>, --hotfix, --compare ou --full (opcional --dry-run)');
 
 const client = await connect();
 try {
@@ -202,6 +278,7 @@ try {
   else if (mode === '--perms') await cmdPerms(client);
   else if (mode === '--hotfix') await cmdHotfix(client);
   else if (mode === '--compare') await cmdCompare(client);
+  else if (mode === '--full') await cmdFull(client);
 } catch (e) {
   console.error(`ERRO: ${e.message}`);
   process.exitCode = 1;
