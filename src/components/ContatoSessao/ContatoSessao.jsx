@@ -20,9 +20,9 @@ import {
   MensagemStatus,
 } from "./Style";
 
-// ID do formulário criado em https://formspree.io (o e-mail de destino é
-// configurado lá, no cadastro do formulário). Formato: "xxxxxxxx".
-const FORMSPREE_ID = "SEU_ID_FORMSPREE";
+// Formulário criado em https://formspree.io (o e-mail de destino é
+// configurado lá, no cadastro do formulário).
+const FORMSPREE_ID = "moedrnpp";
 const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
 
 const ContatoSessao = () => {
