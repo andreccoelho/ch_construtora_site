@@ -240,3 +240,11 @@ export const CampoTextarea = styled.textarea`
 `;
 
 export const BotaoEnviar = styled(Botao).attrs({ $bloco: true })``;
+
+export const MensagemStatus = styled.p`
+  margin: 1rem 0 0;
+  min-height: 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: ${({ $erro }) => ($erro ? "#e07a6f" : "#bdad77")};
+`;
